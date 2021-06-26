@@ -6,11 +6,21 @@
                     <ul class="submenu">
                         <li><a href="titleslogan.php">Title & Slogan</a></li>
                         <li><a href="social.php">Social Media</a></li>
-                        <li><a href="copyright.php">Copyright</a></li>
-                        
+                        <li><a href="copyright.php">Copyright</a></li>       
                     </ul>
                 </li>
-				
+				<li><a class="menuitem">Category Option</a>
+                    <ul class="submenu">
+                        <li><a href="catadd.php">Add Category</a> </li>
+                        <li><a href="catlist.php">Category List</a> </li>
+                    </ul>
+                </li>
+                <li><a class="menuitem">Brand Option</a>
+                    <ul class="submenu">
+                        <li><a href="brandadd.php">Add Brand</a> </li>
+                        <li><a href="brandlist.php">Brand List</a> </li>
+                    </ul>
+                </li>
                  <li><a class="menuitem">Update Pages</a>
                     <ul class="submenu">
                         <li><a>About Us</a></li>
@@ -21,12 +31,6 @@
                     <ul class="submenu">
                         <li><a href="addslider.php">Add Slider</a> </li>
                         <li><a href="sliderlist.php">Slider List</a> </li>
-                    </ul>
-                </li>
-                <li><a class="menuitem">Category Option</a>
-                    <ul class="submenu">
-                        <li><a href="catadd.php">Add Category</a> </li>
-                        <li><a href="catlist.php">Category List</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Product Option</a>

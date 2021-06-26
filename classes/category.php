@@ -83,5 +83,21 @@ include '../helpers/format.php';
 			}
 		}
 	 }
+	 public function delete_category($id)
+	 {
+			$query = "DELETE FROM tbl_category WHERE catId = '$id'";
+			$result = $this->db->delete($query);
+			if($result)
+			{
+				$alert = "<span class='success'> Category deleted successfully </span>";
+				return $alert;
+			}
+			else
+			{
+				$alert = "<span class='error'>Category deleted not success </span>";
+				return $alert;
+			}
+			return $result;
+	 }
  }
 ?>
