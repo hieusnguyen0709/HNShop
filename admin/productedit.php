@@ -13,7 +13,7 @@ else
 {
     echo'<script>window.location="productlist.php"</script>';
 }
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productid']))
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 {
     $updateProduct = $pd->update_product($_POST,$_FILES,$id);
 }
@@ -34,8 +34,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productid']))
                 {
                     while($result_product = $get_product_by_id->fetch_assoc())
                     {
-
-
         ?>          
          <form action="" method="post" enctype="multipart/form-data">
             <table class="form">           
@@ -144,15 +142,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productid']))
                                 if($result_product['type'] == 0)
                                 {
                             ?>
-                            <option selected value="1">Featured</option>
-                            <option value="0">Non-Featured</option>
-                            <?php
-                                }
-                                else
-                                {
-                            ?>
                             <option value="1">Featured</option>
                             <option selected value="0">Non-Featured</option>
+                            <?php
+                                }
+                                elseif($result_product['type'] == 1)
+                                {
+                            ?>
+                            <option selected value="1">Featured</option>
+                            <option value="0">Non-Featured</option>
                             <?php  
                                 }
                             ?>
@@ -163,15 +161,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['productid']))
 				<tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Update" />
+                        <input type="submit" name="submit" value="Update" />
                     </td>
                 </tr>
             </table>
             </form>
             <?php
                     }
-                }
-            
+                }          
             ?>
         </div>
     </div>
