@@ -21,6 +21,12 @@
                         <li><a href="brandlist.php">Brand List</a> </li>
                     </ul>
                 </li>
+                <li><a class="menuitem">Product Option</a>
+                    <ul class="submenu">
+                        <li><a href="productadd.php">Add Product</a> </li>
+                        <li><a href="productlist.php">Product List</a> </li>
+                    </ul>
+                </li>
                  <li><a class="menuitem">Update Pages</a>
                     <ul class="submenu">
                         <li><a>About Us</a></li>
@@ -31,12 +37,6 @@
                     <ul class="submenu">
                         <li><a href="addslider.php">Add Slider</a> </li>
                         <li><a href="sliderlist.php">Slider List</a> </li>
-                    </ul>
-                </li>
-                <li><a class="menuitem">Product Option</a>
-                    <ul class="submenu">
-                        <li><a href="addproduct.php">Add Product</a> </li>
-                        <li><a href="productlist.php">Product List</a> </li>
                     </ul>
                 </li>
             </ul>
