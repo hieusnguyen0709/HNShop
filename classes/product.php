@@ -1,6 +1,7 @@
 <?php
-include_once '../lib/database.php';
-include_once '../helpers/format.php';
+$filepath = realpath(dirname(__FILE__));
+include_once ($filepath.'/../lib/database.php');
+include_once ($filepath.'/../helpers/format.php');
 ?>
 <?php
  class product
@@ -177,6 +178,31 @@ include_once '../helpers/format.php';
 				return $alert;
 			}
 			return $result;
+	 }
+	 //END BACK-END
+	 public function getproduct_featured()
+	 {
+	 	$query = "SELECT * FROM tbl_product WHERE type = '1'";
+	 	$result = $this->db->select($query);
+	 	return $result;
+	 }
+
+	 public function getproduct_new()
+	 {
+	 	$query = "SELECT * FROM tbl_product ORDER BY productId desc LIMIT 4";
+	 	$result = $this->db->select($query);
+	 	return $result;
+	 }
+
+	 public function get_details($id)
+	 {
+	 	$query = "SELECT tbl_product.*, tbl_category.catName, tbl_brand.brandName
+	 	FROM tbl_product 
+	 	INNER JOIN tbl_category ON tbl_product.catId = tbl_category.catId
+	 	INNER JOIN tbl_brand ON tbl_product.brandId = tbl_brand.brandId WHERE tbl_product.productId = '$id'";
+	 	//$query = "SELECT * FROM tbl_product ORDER BY productId desc";
+	 	$result = $this->db->select($query);
+	 	return $result;
 	 }
  }
 ?>
