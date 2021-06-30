@@ -66,8 +66,7 @@ include_once ($filepath.'/../helpers/format.php');
 		$result = $this->db->update($query);
 	 	if($result)
 	 	{
-	 		$msg = "<span style='color:green;font-size:18px'>Product Quantity Updated Successfully</span>";
-			return $msg;
+	 		header('Location:cart.php');
 	 	}
 	 	else
 	 	{

@@ -22,7 +22,7 @@
 	      			{  				
 	      	?>
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php?proid=<?php echo $result['productId']?>"><img height="150px" width="200px" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
+					 <a href="details.php?proid=<?php echo $result['productId']?>"><img height="200px" width="200px" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
 					 <h2><?php echo $result['productName'] ?></h2>
 					 <p><?php echo $fm->textShorten($result['product_desc'], 30) ?></p>
 					 <p><span class="price"><?php echo $result['price']." VND" ?></span></p>
@@ -48,7 +48,7 @@
 	      			{  				
 	      	?>
 				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="details.php?proid=<?php echo $result['productId']?>"><img height="150px" width="200px" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
+					 <a href="details.php?proid=<?php echo $result['productId']?>"><img height="200px" width="200px" src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
 					 <h2><?php echo $result['productName'] ?></h2>
 					 <p><?php echo $fm->textShorten($result['product_desc'], 30) ?></p>
 					 <p><span class="price"><?php echo $result['price']." VND" ?></span></p>
