@@ -86,12 +86,12 @@ if(!isset($_GET['id']))
 								}
 							?>
 						</table>
-						<?php
-										$check_cart = $ct->check_cart();
-										if($check_cart)
-										{
+							<?php
+									$check_cart = $ct->check_cart();
+									if($check_cart)
+									{
 										
-										?>
+							?>
 						<table style="float:right;text-align:left;" width="40%">
 							<tr>
 								<th>Sub Total : </th>

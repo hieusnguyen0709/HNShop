@@ -89,5 +89,46 @@ include_once ($filepath.'/../helpers/format.php');
 			}
 		}
 	}
+
+	public function select_customers($id)
+	{
+		$query ="SELECT * FROM tbl_customer WHERE id='$id' LIMIT 1";
+		$result = $this->db->select($query);
+		return $result;
+	}
+
+	public function update_customers($data,$id)
+	{
+		$name = mysqli_real_escape_string($this->db->link, $data['name']);
+		$city = mysqli_real_escape_string($this->db->link, $data['city']);
+		$zipcode = mysqli_real_escape_string($this->db->link, $data['zipcode']);
+		$email = mysqli_real_escape_string($this->db->link, $data['email']);
+		$address = mysqli_real_escape_string($this->db->link, $data['address']);
+		$country = mysqli_real_escape_string($this->db->link, $data['country']);
+		$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
+
+		if($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == "" || 
+		   $country == "" || $phone == "")
+		{
+			$alert = "<span style='color:red; font-size:18px;'>Fields must be not empty</span>";
+			return $alert;
+		}
+		else
+		{
+
+				$query = "UPDATE tbl_customer SET name='$name', city='$city', zipcode = '$zipcode',email = '$email', address = '$address', country = '$country', phone = '$phone' WHERE id = '$id'";
+				$result = $this->db->update($query);
+				if($result)
+				{
+					$alert = "<span style='color:green; font-size:18px;'>Customer Updated Successfully </span>";
+					return $alert;
+				}
+				else
+				{
+					$alert = "<span style='color:red; font-size:18px;'>Customer Updated Not Successfully</span>";
+					return $alert;
+				}
+		}		
+	}
  }
 ?>
