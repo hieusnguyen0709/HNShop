@@ -1,4 +1,4 @@
-<?php
+ <?php
 $filepath = realpath(dirname(__FILE__));
 include_once ($filepath.'/../lib/database.php');
 include_once ($filepath.'/../helpers/format.php');
@@ -126,5 +126,32 @@ include_once ($filepath.'/../helpers/format.php');
 			}
 		}
 
+		public function getAmountPrice($customer_id)
+		{
+			$query = "SELECT price FROM tbl_order WHERE customer_id = '$customer_id' ";
+			$get_price = $this->db->select($query);
+			return $get_price;
+		}
+
+		public function get_cart_ordered($customer_id)
+		{
+			$query = "SELECT * FROM tbl_order WHERE customer_id = '$customer_id' ";
+			$get_cart_ordered = $this->db->select($query);
+			return $get_cart_ordered;
+		} 
+ 		public function check_order($customer_id)
+ 		{
+ 			$sId = session_id();
+ 			$query = "SELECT * FROM tbl_order WHERE customer_id = '$customer_id'";
+ 			$result = $this->db->select($query);
+ 			return $result;
+ 		}
+
+ 	public function get_inbox_cart()
+ 	{
+ 			$query = "SELECT * FROM tbl_order ORDER BY date_order";
+ 			$get_inbox_cart = $this->db->select($query);
+ 			return $get_inbox_cart;		
+ 	}
  }
 ?>

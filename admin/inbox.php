@@ -1,5 +1,11 @@
 ﻿<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
+
+<?php
+$filepath = realpath(dirname(__FILE__));
+include_once ($filepath.'/../classes/cart.php'); 
+include_once ($filepath.'/../helpers/format.php'); 
+?>
         <div class="grid_10">
             <div class="box round first grid">
                 <h2>Inbox</h2>
@@ -7,52 +13,59 @@
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
-							<th>Serial No.</th>
-							<th>Message</th>
+							<th>No.</th>
+							<th>Order Time</th>
+							<th>Product</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Customer ID</th>
+							<th>Address</th>
 							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
+						<?php
+							$i = 0;
+							$ct = new cart();
+							$fm = new Format();
+							$get_inbox_cart = $ct->get_inbox_cart();
+							if($get_inbox_cart)
+							{
+								while($result = $get_inbox_cart->fetch_assoc())
+								{
+									$i++;
+						?>
 						<tr class="odd gradeX">
-							<td>01</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
+							<td><?php echo $i; ?></td>
+							<td><?php echo $fm->formatDate($result['date_order']); ?></td>
+							<td><?php echo $result['productName']; ?></td>
+							<td><?php echo $result['quantity']; ?></td>
+							<td><?php echo $result['price'].' VND'; ?></td>
+							<td><?php echo $result['customer_id']; ?></td>
+							<td><a href="customer.php?customerid=<?php echo $result['customer_id'] ?>">
+							View Customer</a>
+							</td>
+							<td>
+								<?php
+									if($result['status'] == 0)
+									{
+								?>
+								<a href="?shiftid=<?php echo $result['id'] ?>$price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Pending</a>
+								<?php
+									}
+									else
+									{
+								?>
+								<a href="?shiftid=<?php echo $result['id'] ?>$price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Remove</a>
+								<?php
+									}
+								?>
+							</td>
 						</tr>
-						<tr class="even gradeC">
-							<td>02</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="odd gradeX">
-							<td>03</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>04</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-							<tr class="odd gradeX">
-							<td>05</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>06</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="odd gradeX">
-							<td>07</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>08</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
+						<?php									
+								}
+							}
+						?>
 					</tbody>
 				</table>
                </div>

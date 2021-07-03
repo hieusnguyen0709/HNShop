@@ -2,6 +2,15 @@
 	include 'inc/header.php';
 	//include 'inc/slider.php';
 ?>
+<?php
+if(isset($_GET['orderid']))
+{
+	$customer_id = Session::get('customer_id');
+    $insertOrder = $ct->insertOrder($customer_id);
+    header('location:success.php');
+    $delCart = $ct->del_all_data_cart();
+}
+?>
 <style type="text/css">
 	.box_left
 	{
@@ -188,15 +197,6 @@
  </div>
  	<center><a href="?orderid=order" class="a_submit_order">Order Now</center>
  </form>
- <?php
-
-if(isset($_GET['orderid']) || $_GET['orderid']='order')
-{
-    $customer_id = Session::get('customer_id');
-    $insertOrder = $ct->insertOrder($customer_id);
-    $delCart = $ct->del_all_data_cart();
-}
-?>
 <?php
 	//include 'inc/footer.php';
 ?>
