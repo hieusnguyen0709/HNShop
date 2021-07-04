@@ -7,6 +7,15 @@
 	  	{
 	  		header('Location:login.php');
 	  	}
+
+	  	$ct = new cart();
+		if(isset($_GET['confirmid']))
+		{
+			$id = $_GET['confirmid'];
+			$price = $_GET['price'];
+			$time = $_GET['time'];
+			$confirm_shifted = $ct->confirm_shifted($id,$time,$price);
+		}
 ?>
  <div class="main">
     <div class="content">
@@ -47,14 +56,22 @@
 									<?php
 										if($result['status'] == '0')
 										{
-											echo 'Pending';
+											echo '<p style="color: green;">Pending</p>';
 										}
-										else
+										else if($result['status'] == '1')
 										{
-											echo'Processed';
+									?>
+										<span>Shipped</span>
+										
+									<?php
+										}
+										else if($result['status'] == '2')
+										{
+											echo'Received';
 										}
 									?>
 								</td>
+
 								<?php
 									if($result['status'] == '0')
 									{
@@ -62,10 +79,17 @@
 								<td><?php echo 'N/A'; ?></td>							
 								<?php
 									}
+									else if($result['status'] == '1')
+									{
+								?>
+								<td><a href="?confirmid=<?php echo $customer_id ?> &price=<?php echo 
+								$result['price'] ?>&time=<?php echo $result['date_order'] ?>">Confirmed</a></td>
+								<?php
+									}
 									else
 									{
 								?>
-								<td><a onclick="return confirm('Do you want to delete ?')" href="">Delete</a></td>
+								<td><?php echo 'Received'; ?></td>
 								<?php
 									}
 								?>

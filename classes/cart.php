@@ -153,5 +153,61 @@ include_once ($filepath.'/../helpers/format.php');
  			$get_inbox_cart = $this->db->select($query);
  			return $get_inbox_cart;		
  	}
+
+ 	public function shifted($id,$time,$price)
+ 	{
+		$id = mysqli_real_escape_string($this->db->link, $id); 	
+	 	$time = mysqli_real_escape_string($this->db->link, $time); 
+	 	$price = mysqli_real_escape_string($this->db->link, $price); 
+
+	 	$query = "UPDATE tbl_order SET 
+		status = '1'
+		WHERE id = '$id' AND date_order = '$time' AND price = '$price'";
+		$result = $this->db->update($query);
+	 	if($result)
+	 	{
+	 		$msg = "<span style='color:green;font-size:18px'>Update Order Successfully</span>";
+			return $msg;
+	 	}
+	 	else
+	 	{
+	 		$msg = "<span style='color:red;font-size:18px'>Update Order Not Success</span>";
+			return $msg;
+	 	}
+ 	}
+
+ 	public function del_shifted($id,$time,$price)
+ 	{
+ 		$id = mysqli_real_escape_string($this->db->link, $id); 	
+	 	$time = mysqli_real_escape_string($this->db->link, $time); 
+	 	$price = mysqli_real_escape_string($this->db->link, $price); 
+
+	 	$query = "DELETE FROM tbl_order
+		WHERE id = '$id' AND date_order = '$time' AND price = '$price'";
+		$result = $this->db->update($query);
+	 	if($result)
+	 	{
+	 		$msg = "<span style='color:green;font-size:18px'>Delete Order Successfully</span>";
+			return $msg;
+	 	}
+	 	else
+	 	{
+	 		$msg = "<span style='color:red;font-size:18px'>Delete Order Not Success</span>";
+			return $msg;
+	 	}
+ 	}
+
+ 	public function confirm_shifted($id,$time,$price)
+ 	{
+		$id = mysqli_real_escape_string($this->db->link, $id); 	
+	 	$time = mysqli_real_escape_string($this->db->link, $time); 
+	 	$price = mysqli_real_escape_string($this->db->link, $price); 
+
+	 	$query = "UPDATE tbl_order SET 
+		status = '2'
+		WHERE customer_id = '$id' AND date_order = '$time' AND price = '$price'";
+		$result = $this->db->update($query);
+		return $result;
+ 	}
  }
 ?>

@@ -6,10 +6,40 @@ $filepath = realpath(dirname(__FILE__));
 include_once ($filepath.'/../classes/cart.php'); 
 include_once ($filepath.'/../helpers/format.php'); 
 ?>
+<?php
+$ct = new cart();
+if(isset($_GET['shiftid']))
+{
+	$id = $_GET['shiftid'];
+	$price = $_GET['price'];
+	$time = $_GET['time'];
+	$shifted = $ct->shifted($id,$time,$price);
+}
+if(isset($_GET['delid']))
+{
+	$id = $_GET['delid'];
+	$price = $_GET['price'];
+	$time = $_GET['time'];
+	$del_shifted = $ct->del_shifted($id,$time,$price);
+}
+?>
+
         <div class="grid_10">
             <div class="box round first grid">
                 <h2>Inbox</h2>
-                <div class="block">        
+                <div class="block">    
+                <?php
+                	if(isset($shifted))
+                	{
+                		echo $shifted;
+                	}
+                ?>    
+                <?php
+                	if(isset($del_shifted))
+                	{
+                		echo $del_shifted;
+                	}
+                ?>    
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
@@ -50,13 +80,21 @@ include_once ($filepath.'/../helpers/format.php');
 									if($result['status'] == 0)
 									{
 								?>
-								<a href="?shiftid=<?php echo $result['id'] ?>$price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Pending</a>
+								<a style="color: green;" href="?shiftid=<?php echo $result['id'] ?> &price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Pending</a>
+								<?php
+									}
+									else if($result['status'] == 1)
+									{
+								?>
+								<?php
+									echo'Shipping...';
+								?>
 								<?php
 									}
 									else
 									{
 								?>
-								<a href="?shiftid=<?php echo $result['id'] ?>$price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Remove</a>
+								<a style="color:red;" href="?delid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Remove</a>
 								<?php
 									}
 								?>
