@@ -86,7 +86,9 @@ $product = new product();
 		   <?php
 		   		if(isset($_GET['customer_id']))
 		   		{
+		   			$customer_id = $_GET['customer_id'];
 		   			$delCart = $ct->del_all_data_cart();
+		   			$delCompare = $ct->del_compare($customer_id);
 		   			Session::destroy();
 		   		}
 		   ?>
@@ -144,7 +146,15 @@ $product = new product();
 	  	{
 	  		echo'<li><a href="profile.php">Profile</a> </li>';
 	  	}
-	  ?>	  
+	  ?>
+	  <?php
+		$login_check = Session::get('customer_login');
+	  	if($login_check)
+	  	{
+	  		echo'<li><a href="compare.php">Compare</a> </li>';
+	  	}
+	  ?>
+	  	  
 	  <li><a href="contact.php">Contact</a> </li>
 	  <div class="clear"></div>
 	</ul>

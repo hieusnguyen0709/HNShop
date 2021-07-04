@@ -88,7 +88,7 @@ include_once ($filepath.'/../helpers/format.php');
 				$msg = "<span class='error'>Sản phẩm đã được xóa</span>";
 				return $msg;
 			}
-		}
+	}
 
 		public function check_cart()
 		{
@@ -209,5 +209,14 @@ include_once ($filepath.'/../helpers/format.php');
 		$result = $this->db->update($query);
 		return $result;
  	}
+
+ 	public function del_compare($customer_id)
+ 	{
+ 			$sId = session_id();
+			$query = "DELETE FROM tbl_compare WHERE customer_id = '$customer_id'";
+			$result = $this->db->delete($query);
+			return $result;
+ 	}
+
  }
 ?>

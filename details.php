@@ -11,10 +11,18 @@ else
 {
     echo'<script>window.location=""</script>';
 }
+$customer_id = Session::get('customer_id');
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['compare']))
+{
+
+	$productid = $_POST['productid'];
+    $insertCompare = $product->insertCompare($productid,$customer_id);
+}
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 {
+
 	$quantity = $_POST['quantity'];
-    $AddtoCart = $ct->add_to_cart($quantity,$id);
+    $insertCart = $ct->add_to_cart($quantity,$id);
 }
 ?>
  <div class="main">
@@ -52,12 +60,36 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 						}
 					?>		
 				</div>
+				<div class="">
+					<form action="" method="POST">
+						<input type="hidden" name="productid" value="<?php echo $result['productId'] ?>"/>
+						
+						  <?php
+							$login_check = Session::get('customer_login');
+						  	if($login_check)
+						  	{
+						  		echo'<input type="submit" class="buysubmit" name="compare" value="Compare Products"/>';
+						  		echo' ';
+						  		echo'<input type="submit" class="buysubmit" name="wishlist" value="Save to Wishlist"/></br></br>';
+						  	}
+						  	else
+						  	{
+						  		echo'';
+						  	}
+						  ?>
+						<?php
+							if(isset($insertCompare))
+							{
+								echo $insertCompare;
+							}
+						?>
+					</form>
+				</div>
 			</div>
 			<div class="product-desc">
 			<h2>Product Details</h2>
 			<?php echo $fm->textShorten($result['product_desc'], 30) ?>
-	    </div>
-				
+	    </div>			
 	</div>
 	<?php
 	    			}
