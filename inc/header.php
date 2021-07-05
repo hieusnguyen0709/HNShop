@@ -151,7 +151,7 @@ $product = new product();
 		$login_check = Session::get('customer_login');
 	  	if($login_check)
 	  	{
-	  		echo'<li><a href="compare.php">Compare</a> </li>';
+	  		echo'<li><a href="wishlist.php">Wishlist</a> </li>';
 	  	}
 	  ?>
 	  	  

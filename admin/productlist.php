@@ -52,7 +52,7 @@ if(isset($_GET['productid']))
 				<tr class="odd gradeX">
 					<td><?php echo $i; ?></td>
 					<td><?php echo $result['productName'] ?></td>
-					<td><?php echo $result['price'] ?></td>
+					<td><?php echo $fm->format_currency($result['price']) ?></td>
 					<td><img src="uploads/<?php echo $result['image'] ?>" width="80px" height="80px"></td>
 					<td><?php echo $result['catName'] ?></td>
 					<td><?php echo $result['brandName'] ?></td>

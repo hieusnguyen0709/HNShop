@@ -80,13 +80,13 @@ if(isset($_GET['orderid']))
 								<td><?php echo $i ?></td>
 								<td><?php echo $result['productName'] ?></td>
 								<td><img src="admin/uploads/<?php echo $result['image'] ?>" alt=""/></td>
-								<td><?php echo $result['price'].' VND' ?></td>
+								<td><?php echo $fm->format_currency($result['price']) ?></td>
 								<td>
 									<?php echo $result['quantity'] ?>								</td>
 								<td>
 									<?php
 										$total = $result['price'] * $result['quantity'];
-										echo $total.' VND';
+										echo $fm->format_currency($total);
 									?>
 								</td>
 							</tr>
@@ -108,7 +108,7 @@ if(isset($_GET['orderid']))
 								<th>Sub Total : </th>
 								<td>
 									<?php
-										echo $subtotal. ' VND';
+										echo $fm->format_currency($subtotal);
 										Session::set('sum',$subtotal);
 										Session::set('qty',$qty);
 									?>
@@ -116,7 +116,7 @@ if(isset($_GET['orderid']))
 							</tr>
 							<tr>
 								<th>VAT (10%): </th>
-								<td><?php echo $vat = $subtotal * 0.1.' VND'; ?></td>
+								<td><?php $vat = $subtotal * 0.1; echo $fm->format_currency($vat); ?></td>
 							</tr>
 							<tr>
 								<th>Grand Total :</th>
@@ -124,7 +124,7 @@ if(isset($_GET['orderid']))
 									<?php
 										$vat = $subtotal *0.1;
 										$gtotal = $subtotal + $vat;
-										echo $gtotal.' VND';
+										echo $fm->format_currency($gtotal);
 									?>
 								</td>
 							</tr>

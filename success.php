@@ -60,7 +60,7 @@
     			<?php 
     				$vat = $amount * 0.1;
     				$total = $vat + $amount;
-    				echo $total.' VND';
+    				echo $fm->format_currency($total);
     			?>
     		 </p>
     		<p class="success_note">We Will Contact As Soon As Possible. Please See Your Order Details Here <a href="orderdetails.php">Click here</a> </p></br>

@@ -63,7 +63,7 @@ if(!isset($_GET['id']))
 							<tr>
 								<td><?php echo $result['productName'] ?></td>
 								<td><img src="admin/uploads/<?php echo $result['image'] ?>" alt=""/></td>
-								<td><?php echo $result['price'] ?></td>
+								<td><?php echo $fm->format_currency($result['price']) ?></td>
 								<td>
 									<form action="" method="post">
 										<input type="hidden" name="cartId" value="<?php echo $result['cartId'] ?>"/>
@@ -74,7 +74,7 @@ if(!isset($_GET['id']))
 								<td>
 									<?php
 										$total = $result['price'] * $result['quantity'];
-										echo $total;
+										echo $fm->format_currency($total);
 									?>
 								</td>
 								<td><a onclick="return confirm('Do you want to delete ?')" href="?cartid=<?php echo $result['cartId'] ?>">Delete</a></td>
@@ -97,7 +97,7 @@ if(!isset($_GET['id']))
 								<th>Sub Total : </th>
 								<td>
 									<?php
-										echo $subtotal;
+										echo $fm->format_currency($subtotal);
 										Session::set('sum',$subtotal);
 										Session::set('qty',$qty);
 									?>
@@ -113,7 +113,7 @@ if(!isset($_GET['id']))
 									<?php
 										$vat = $subtotal *0.1;
 										$gtotal = $subtotal + $vat;
-										echo $gtotal;
+										echo $fm->format_currency($gtotal);
 									?>
 								</td>
 							</tr>

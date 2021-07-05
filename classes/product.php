@@ -242,7 +242,7 @@ include_once ($filepath.'/../helpers/format.php');
 	 	$result_check_compare = $this->db->select($check_compare);
 	 	if($result_check_compare)
 	 	{
-	 		$msg = "<span style='color:red; font-size:18px;'>Product Already Added to Compare</span>";
+	 		$msg = "<span style='color:red; font-size:18px;'>Product Already Added to Wishlist</span>";
 	 		return $msg;
 	 	}
 	 	else
@@ -259,12 +259,12 @@ include_once ($filepath.'/../helpers/format.php');
 		$insert_compare = $this->db->insert($query_insert);
 		if($insert_compare)
 			{
-				$alert = "<span class='success'> Added Compare Successfully </span>";
+				$alert = "<span class='success'> Added Wishlist Successfully </span>";
 				return $alert;
 			}
 			else
 			{
-				$alert = "<span class='error'> Added Compare Not Success </span>";
+				$alert = "<span class='error'> Added Wishlist Not Success </span>";
 				return $alert;
 			}
 		}

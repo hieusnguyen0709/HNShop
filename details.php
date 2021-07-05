@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 					<h2><?php echo $result['productName'] ?></h2>
 					<p><?php echo $fm->textShorten($result['product_desc'], 30) ?></p>					
 					<div class="price">
-						<p>Price: <span><?php echo $result['price']." VND" ?></span></p>
+						<p>Price: <span><?php echo $fm->format_currency($result['price']) ?></span></p>
 						<p>Category: <span><?php echo $result['catName'] ?></span></p>
 						<p>Brand:<span><?php echo $result['brandName'] ?></span></p>
 					</div>
@@ -68,15 +68,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 							$login_check = Session::get('customer_login');
 						  	if($login_check)
 						  	{
-						  		echo'<input type="submit" class="buysubmit" name="compare" value="Compare Products"/>';
+						  		echo'<input type="submit" class="buysubmit" name="compare" value="Save to Wishlist"/>';
 						  		echo' ';
-						  		echo'<input type="submit" class="buysubmit" name="wishlist" value="Save to Wishlist"/></br></br>';
 						  	}
 						  	else
 						  	{
 						  		echo''; 
 						  	}
 						  ?>
+						</br></br>
 						<?php
 							if(isset($insertCompare))
 							{

@@ -48,7 +48,7 @@
 								<td><?php echo $i; ?></td>
 								<td><?php echo $result['productName'] ?></td>
 								<td><img src="admin/uploads/<?php echo $result['image'] ?>" alt=""/></td>
-								<td><?php echo $result['price'].' VND' ?></td>
+								<td><?php echo $fm->format_currency($result['price']) ?></td>
 								<td><?php echo $result['quantity'] ?></td>
 								
 								<td><?php echo $fm->formatDate($result['date_order']) ?></td>
