@@ -74,7 +74,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 						  	}
 						  	else
 						  	{
-						  		echo'';
+						  		echo''; 
 						  	}
 						  ?>
 						<?php
