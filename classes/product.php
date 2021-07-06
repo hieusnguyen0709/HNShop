@@ -276,5 +276,91 @@ include_once ($filepath.'/../helpers/format.php');
 	 	$result = $this->db->select($query);
 	 	return $result; 	
 	 }
+
+	 public function insert_slider($data,$files)
+	 {
+		$sliderName = mysqli_real_escape_string($this->db->link, $data['sliderName']); 
+		$type = mysqli_real_escape_string($this->db->link, $data['type']); 
+		//Ket noi toi CSDL
+		//mysqli gọi 2 biến. (catName and link) biến link -> gọi conect db từ file db
+			
+		// kiểm tra hình ảnh và lấy hình ảnh cho vào folder upload
+		$permited = array('jpg','jpeg','png','gif');
+		$file_name = $_FILES['image']['name'];
+		$file_size = $_FILES['image']['size'];
+		$file_temp = $_FILES['image']['tmp_name'];
+			
+		$div =explode('.', $file_name);
+		$file_ext = strtolower(end($div));
+		$unique_image = substr(md5(time()), 0,10).'.'.$file_ext;
+		$uploaded_image = "uploads/".$unique_image;
+
+		if($sliderName == "" || $type == "")
+		{
+			$alert = "<span class='error'>Fields must be not empty</span>";
+			return $alert;
+		}
+		else
+		{
+			if(!empty($file_name)) //Nếu người dùng chọn ảnh
+			{
+				if ($file_size > 2048000) 
+				{
+		    		$alert = "<span class='success'>Image Size should be less than 2MB!</span>";
+					return $alert;
+				}
+				else if(in_array($file_ext, $permited) === false)
+				{
+					$alert = "<span class='success'>You can upload only:-".implode(', ', $permited)."</span>";
+					return $alert;
+				}
+				move_uploaded_file($file_temp,$uploaded_image);			
+				$query = "INSERT INTO tbl_slider(sliderName,type,slider_image) VALUES('$sliderName','$type','$unique_image')";
+				$result = $this->db->insert($query);
+				if($result)
+				{
+					$alert = "<span class='success'>Slider Added Successfully </span>";
+					return $alert;
+				}
+				else
+				{
+					$alert = "<span class='error'>Slider Added Not Success </span>";
+					return $alert;
+				}
+			}
+		}
+	 }
+
+	 public function select_slider()
+	 {
+	 	$query = "SELECT * FROM tbl_slider WHERE type = '1' ORDER BY sliderId desc";
+	 	$result=$this->db->select($query);
+	 	return $result;
+	 }
+
+	 public function update_type_slider($id,$type)
+	 {
+	 	$type = mysqli_real_escape_string($this->db->link, $type); 
+	 	$query = "UPDATE tbl_slider SET type = '$type' WHERE sliderId='$id' ";
+	 	$result=$this->db->update($query);
+	 	return $result;
+	 }
+
+	 public function del_slider($id)
+	 {
+	 		$query = "DELETE FROM tbl_slider WHERE sliderId = '$id'";
+			$result = $this->db->delete($query);
+			if($result)
+			{
+				$alert = "<span class='success'> Slider deleted successfully </span>";
+				return $alert;
+			}
+			else
+			{
+				$alert = "<span class='error'> Slider deleted not success </span>";
+				return $alert;
+			}
+			return $result;
+	 }
  }
 ?>

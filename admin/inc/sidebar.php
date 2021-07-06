@@ -27,18 +27,19 @@
                         <li><a href="productlist.php">Product List</a> </li>
                     </ul>
                 </li>
+                <li><a class="menuitem">Slider Option</a>
+                    <ul class="submenu">
+                        <li><a href="slideradd.php">Add Slider</a> </li>
+                        <li><a href="sliderlist.php">Slider List</a> </li>
+                    </ul>
+                </li>
                  <li><a class="menuitem">Update Pages</a>
                     <ul class="submenu">
                         <li><a>About Us</a></li>
                         <li><a>Contact Us</a></li>
                     </ul>
                 </li>
-				<li><a class="menuitem">Slider Option</a>
-                    <ul class="submenu">
-                        <li><a href="addslider.php">Add Slider</a> </li>
-                        <li><a href="sliderlist.php">Slider List</a> </li>
-                    </ul>
-                </li>
+
             </ul>
         </div>
     </div>

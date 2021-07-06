@@ -96,10 +96,18 @@
 			<section class="slider">
 				  <div class="flexslider">
 					<ul class="slides">
-						<li><img src="images/1.jpg" alt=""/></li>
-						<li><img src="images/2.jpg" alt=""/></li>
-						<li><img src="images/3.jpg" alt=""/></li>
-						<li><img src="images/4.jpg" alt=""/></li>
+						<?php
+							$get_slider = $product->select_slider();
+							if($get_slider)
+							{
+								while($result = $get_slider->fetch_assoc())
+								{
+						?>
+						<li><img width="400px" height="200px" src="admin/uploads/<?php echo $result['slider_image'] ?>" alt="<?php echo $result['sliderName'] ?>"/></li>
+						<?php									
+								}
+							}
+						?>
 				    </ul>
 				  </div>
 	      </section>
