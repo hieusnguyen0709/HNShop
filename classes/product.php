@@ -189,7 +189,24 @@ include_once ($filepath.'/../helpers/format.php');
 
 	 public function getproduct_new()
 	 {
-	 	$query = "SELECT * FROM tbl_product ORDER BY productId desc LIMIT 4";
+	 	$sp_tungtrang = 4;
+	 	if(!isset($_GET['trang']))
+	 	{
+	 		$trang = 1;
+	 	}
+	 	else
+	 	{
+	 		$trang = $_GET['trang'];
+	 	}
+	 	$tungtrang = ($trang - 1) * $sp_tungtrang;
+	 	$query = "SELECT * FROM tbl_product ORDER BY productId desc LIMIT $tungtrang,$sp_tungtrang";
+	 	$result = $this->db->select($query);
+	 	return $result;
+	 }
+
+	 public function get_all_product()
+	 {
+	 	$query = "SELECT * FROM tbl_product";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }
@@ -361,6 +378,14 @@ include_once ($filepath.'/../helpers/format.php');
 				return $alert;
 			}
 			return $result;
+	 }
+
+	 public function search_product($tukhoa)
+	 {
+	 	$tukhoa = $this->fm->validation($tukhoa);
+	 	$query = "SELECT *FROM tbl_product WHERE productName LIKE '%$tukhoa%' ";
+	 	$result=$this->db->select($query);
+	 	return $result;
 	 }
  }
 ?>
