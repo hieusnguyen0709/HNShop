@@ -24,6 +24,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 	$quantity = $_POST['quantity'];
     $insertCart = $ct->add_to_cart($quantity,$id);
 }
+if(isset($_POST['binhluan_submit']))
+{
+	$binhluan_insert = $cs->insert_binhluan();
+}
 ?>
  <div class="main">
     <div class="content">
@@ -116,6 +120,28 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
     	
  				</div>
  		</div>
+ 		<div class="comment">
+ 			<div class="row">
+ 				<div class="col-md-8">
+ 				<h3 style="color: #602D8D;font-family: 'Monda', sans-serif; font-size: 22px">COMMENT</h3>
+ 				<?php
+ 					if(isset($binhluan_insert))
+ 					{
+ 						echo $binhluan_insert;
+ 					}
+ 				?>
+ 					 <form action="" method="POST">
+ 					 	<p><input type="hidden" value="<?php echo $id ?>" name="product_id_binhluan"></p>
+ 				 		<p><input type="text" class="form-control" name="tennguoibinhluan" placeholder="Name"></p>
+ 						<p>
+ 							<textarea style="resize: none;" rows="5" placeholder="Comment..." class="form-control" name="binhluan"></textarea>
+ 						</p>
+ 						<p><input type="submit" value="Send" name="binhluan_submit" class="btn btn-success"></p>
+ 					</form>
+ 				</div>
+ 			</div>
+ 		</div>
+
  	</div>
 <?php
 	include 'inc/footer.php';

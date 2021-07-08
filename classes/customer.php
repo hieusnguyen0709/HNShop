@@ -130,5 +130,32 @@ include_once ($filepath.'/../helpers/format.php');
 				}
 		}		
 	}
+
+	public function insert_binhluan()
+	{
+		$product_id = $_POST['product_id_binhluan'];
+		$tenbinhluan = $_POST['tennguoibinhluan'];
+		$binhluan = $_POST['binhluan'];
+		if($tenbinhluan == '' || $binhluan == '')
+		{
+			$alert = "<span style='color:red; font-size:18px;'>Fields must be not empty</span>";
+			return $alert;
+		}
+		else
+		{
+				$query = "INSERT INTO tbl_comment(name_comment,comment,product_id) VALUES('$tenbinhluan','$binhluan','$product_id')";
+				$result = $this->db->insert($query);
+				if($result)
+				{
+					$alert = "<span style='color:green; font-size:18px;'>Comment Successfully </span>";
+					return $alert;
+				}
+				else
+				{
+					$alert = "<span style='color:red; font-size:18px;'>Comment Not Success</span>";
+					return $alert;
+				}
+		}
+	}
  }
 ?>
