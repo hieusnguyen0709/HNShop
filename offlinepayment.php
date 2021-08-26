@@ -66,7 +66,8 @@ if(isset($_GET['orderid']))
 								<th width="25%">Total Price</th>
 							</tr>
 							<?php
-								$get_product_cart = $ct->get_product_cart();
+								$customer_id = Session::get('customer_id');
+								$get_product_cart = $ct->get_product_cart($customer_id);
 								if($get_product_cart)
 								{
 									$subtotal = 0;

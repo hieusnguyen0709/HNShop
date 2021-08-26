@@ -80,7 +80,7 @@ include_once ($filepath.'/../helpers/format.php');
 				Session::set('customer_login',true);
 				Session::set('customer_id',$value['id']);
 				Session::set('customer_name',$value['name']);
-				header('location:order.php');
+				header('location:index.php');
 			}
 			else
 			{

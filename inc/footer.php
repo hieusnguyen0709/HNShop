@@ -88,5 +88,7 @@
 		  });
 		});
 	  </script>
+	  <div id="fb-root"></div>
+	  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=892560715010625&autoLogAppEvents=1" nonce="LgNfqiII"></script>
 </body>
 </html>
