@@ -15,8 +15,9 @@ include_once ($filepath.'/../helpers/format.php');
 		$this->fm = new Format();  
 	 }
 
-	 public function add_to_cart($quantity,$id)
+	 public function add_to_cart($quantity,$id,$customer_id)
 	 {
+	 	$customer_id = mysqli_real_escape_string($this->db->link, $customer_id);
 	 	$quantity = $this->fm->validation($quantity);
 	 	$quantity = mysqli_real_escape_string($this->db->link, $quantity); 
 		$id = mysqli_real_escape_string($this->db->link, $id); 
@@ -29,7 +30,7 @@ include_once ($filepath.'/../helpers/format.php');
 		$price = $result['price'];
 		$productName = $result['productName'];
 
-		$check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId ='$sId'";
+		$check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId ='$sId' AND customer_id='$customer_id'";
 		$result_check = $this->db->select($check_cart);
 		if($result_check)
 		{
@@ -38,8 +39,8 @@ include_once ($filepath.'/../helpers/format.php');
 		}
 		else
 		{
-			$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) 
-			VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+			$query_insert = "INSERT INTO tbl_cart(productId,customer_id,quantity,sId,image,price,productName) 
+			VALUES('$id','$customer_id','$quantity','$sId','$image','$price','$productName')";
 			$insert_cart = $this->db->insert($query_insert);
 			if($result)
 			{
@@ -48,10 +49,10 @@ include_once ($filepath.'/../helpers/format.php');
 		}
 	 }
 
-	 public function get_product_cart()
+	 public function get_product_cart($customer_id)
 	 {
 	 	$sId  = session_id();
-	 	$query = "SELECT * FROM tbl_cart WHERE sId = '$sId'";
+	 	$query = "SELECT * FROM tbl_cart WHERE sId = '$sId' AND customer_id = '$customer_id'";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }

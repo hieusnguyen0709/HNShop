@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 {
 	$customer_id = Session::get('customer_id');
 	$quantity = $_POST['quantity'];
-    $insertCart = $ct->add_to_cart($quantity,$id);
+    $insertCart = $ct->add_to_cart($quantity,$id,$customer_id);
 }
 
 //Thêm bình luận
