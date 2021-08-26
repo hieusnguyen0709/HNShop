@@ -291,26 +291,26 @@ include_once ($filepath.'/../helpers/format.php');
 	 	}
 	 	else
 	 	{
-		$query = "SELECT * FROM tbl_product WHERE productId = '$productid'";
-		$result = $this->db->select($query)->fetch_assoc();
-		
-		$image = $result['image'];
-		$price = $result['price'];
-		$productName = $result['productName'];
+			$query = "SELECT * FROM tbl_product WHERE productId = '$productid'";
+			$result = $this->db->select($query)->fetch_assoc();
+			
+			$image = $result['image'];
+			$price = $result['price'];
+			$productName = $result['productName'];
 
-		$query_insert = "INSERT INTO tbl_compare(productId,price,image,customer_id,productName) 
-		VALUES('$productid','$price','$image','$customer_id','$productName')";
-		$insert_compare = $this->db->insert($query_insert);
-		if($insert_compare)
-			{
-				$alert = "<span class='success'> Added Wishlist Successfully </span>";
-				return $alert;
-			}
-			else
-			{
-				$alert = "<span class='error'> Added Wishlist Not Success </span>";
-				return $alert;
-			}
+			$query_insert = "INSERT INTO tbl_compare(productId,price,image,customer_id,productName) 
+			VALUES('$productid','$price','$image','$customer_id','$productName')";
+			$insert_compare = $this->db->insert($query_insert);
+			if($insert_compare)
+				{
+					$alert = "<span class='success'> Added Wishlist Successfully </span>";
+					return $alert;
+				}
+				else
+				{
+					$alert = "<span class='error'> Added Wishlist Not Success </span>";
+					return $alert;
+				}
 		}
 	 }
 
@@ -318,6 +318,13 @@ include_once ($filepath.'/../helpers/format.php');
 	 {
 		$query = "SELECT * FROM tbl_compare WHERE customer_id = '$customer_id' ORDER BY id desc";
 	 	$result = $this->db->select($query);
+	 	return $result; 	
+	 }
+
+	 public function delete_compare($proid)
+	 {
+		$query = "DELETE FROM tbl_compare WHERE productId ='$proid'";
+	 	$result = $this->db->delete($query);
 	 	return $result; 	
 	 }
 

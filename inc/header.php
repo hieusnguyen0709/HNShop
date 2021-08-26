@@ -92,8 +92,8 @@ $product = new product();
 		   		if(isset($_GET['customer_id']))
 		   		{
 		   			$customer_id = $_GET['customer_id'];
-		   			$delCart = $ct->del_all_data_cart();
-		   			$delCompare = $ct->del_compare($customer_id);
+		   			//$delCart = $ct->del_all_data_cart();
+		   			//$delCompare = $ct->del_compare($customer_id);
 		   			Session::destroy();
 		   		}
 		   ?>

@@ -17,7 +17,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
     	$delcart = $ct->del_product_cart($cartId);
     }
 }*/
+if(isset($_GET['proid']))
+{
+	$proid = $_GET['proid'];
+	$delcompare = $product->delete_compare($proid);
+}
 ?>
+
  <div class="main">
     <div class="content">
     	<div class="cartoption">		
@@ -58,7 +64,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 								<td><?php echo $result['productName'] ?></td>
 								<td><img src="admin/uploads/<?php echo $result['image'] ?>"  alt=""/></td>
 								<td><?php echo $fm->format_currency($result['price']) ?></td>
-								<td><a href="details.php?proid=<?php echo $result['productId'] ?>">View</a></td>
+								<td><a onclick="return confirm('Do you want to delete ?')" href="?proid=<?php echo $result['productId'] ?>">Detele</a> | 
+								<a href="details.php?proid=<?php echo $result['productId'] ?>">View</a></td>
 							</tr>
 							<?php
 									}

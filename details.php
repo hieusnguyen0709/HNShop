@@ -3,6 +3,8 @@
 	//include 'inc/slider.php';
 ?>
 <?php
+
+//Thông tin sản phẩm theo id
 if(isset($_GET['proid']) || $_GET['proid']!=NULL)
 {
     $id = $_GET['proid'];
@@ -11,6 +13,8 @@ else
 {
     echo'<script>window.location=""</script>';
 }
+
+//Thêm vào danh sách yêu thích
 $customer_id = Session::get('customer_id');
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['compare']))
 {
@@ -18,12 +22,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['compare']))
 	$productid = $_POST['productid'];
     $insertCompare = $product->insertCompare($productid,$customer_id);
 }
+
+//Thêm vào giỏ hàng
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 {
-
+	$customer_id = Session::get('customer_id');
 	$quantity = $_POST['quantity'];
     $insertCart = $ct->add_to_cart($quantity,$id);
 }
+
+//Thêm bình luận
 if(isset($_POST['binhluan_submit']))
 {
 	$binhluan_insert = $cs->insert_binhluan();
