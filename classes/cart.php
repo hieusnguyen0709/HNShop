@@ -150,7 +150,7 @@ include_once ($filepath.'/../helpers/format.php');
 
  	public function get_inbox_cart()
  	{
- 			$query = "SELECT * FROM tbl_order ORDER BY date_order";
+ 			$query = "SELECT * FROM tbl_order O JOIN tbl_customer C ON O.customer_id = C.id  ORDER BY date_order";
  			$get_inbox_cart = $this->db->select($query);
  			return $get_inbox_cart;		
  	}
