@@ -19,7 +19,7 @@ $cs = new customer();
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Update Category</h2>
+                <h2>Customer Information</h2>
                <div class="block copyblock"> 
                 <?php
                     $get_customer = $cs->select_customers($id);
@@ -41,53 +41,40 @@ $cs = new customer();
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td>:</td>
+                            <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['phone'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>City</td>
-                            <td>:</td>
+                            <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['city'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
                             </td>
                         </tr>
                          <tr>
                             <td>Country</td>
-                            <td>:</td>
+                            <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['country'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>Address</td>
-                            <td>:</td>
+                            <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['address'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
                             </td>
                         </tr>
-                         <tr>
-                            <td>Zipcode</td>
-                            <td>:</td>
-                            <td>
-                                <input type="text" readonly="readonly" value="<?php echo $result['zipcode'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
-                            </td>
-                        </tr>
                         <tr>
                             <td>Email</td>
-                            <td>:</td>
+                            <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['email'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
                             </td>
                         </tr>
-                        <tr>
-                            <td>Password</td>
-                            <td>:</td>
-                            <td>
-                                <input type="text" readonly="readonly" value="<?php echo md5($result['password']) ?>" name="catName" placeholder="Update Category Name..." class="medium" />
-                            </td>
-                        </tr>
+                       
                     </table>
                     </form>
                 <?php

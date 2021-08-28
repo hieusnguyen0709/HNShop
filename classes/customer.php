@@ -80,11 +80,11 @@ include_once ($filepath.'/../helpers/format.php');
 				Session::set('customer_login',true);
 				Session::set('customer_id',$value['id']);
 				Session::set('customer_name',$value['name']);
-				header('location:order.php');
+				header('location:index.php');
 			}
 			else
 			{
-				$alert = "<span style='color:red; font-size:18px;'>Email or Passord doesn't match !</span>";
+				$alert = "<span style='color:red; font-size:18px;'>Email or Password doesn't match !</span>";
 				return $alert;
 			}
 		}

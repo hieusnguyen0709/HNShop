@@ -44,8 +44,7 @@ if(isset($_POST['binhluan_submit']))
 						<img height="150px" width="200px" src="admin/uploads/<?php echo $result['image'] ?>" alt="" />
 					</div>
 				<div class="desc span_3_of_2">
-					<h2><?php echo $result['productName'] ?></h2>
-					<p><?php echo $fm->textShorten($result['product_desc'], 30) ?></p>					
+					<h2><?php echo $result['productName'] ?></h2>				
 					<div class="price">
 						<p>Price: <span><?php echo $fm->format_currency($result['price']) ?></span></p>
 						<p>Category: <span><?php echo $result['catName'] ?></span></p>
@@ -91,8 +90,8 @@ if(isset($_POST['binhluan_submit']))
 				</div>
 			</div>
 			<div class="product-desc">
-			<h2>Product Details</h2>
-			<?php echo $fm->textShorten($result['product_desc'], 30) ?>
+			<h2>Preview</h2>
+			<?php echo $result['product_desc'] ?>
 	    </div>			
 	</div>
 	<?php
