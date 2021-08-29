@@ -58,9 +58,7 @@
     		?>
     		<p class="success_note">Total Price You Have Bought From Our Website :
     			<?php 
-    				$vat = $amount * 0.1;
-    				$total = $vat + $amount;
-    				echo $fm->format_currency($total);
+    				echo $fm->format_currency($amount);
     			?>
     		 </p>
     		<p class="success_note">We Will Contact As Soon As Possible. Please See Your Order Details Here <a href="orderdetails.php">Click here</a> </p></br>

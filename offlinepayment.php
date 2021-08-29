@@ -103,28 +103,14 @@ if(isset($_GET['orderid']))
 									{
 										
 							?>
-						<table style="float:right;text-align:left; border:1px;" width="40%">
+						<table style="float:right;text-align:left; border:1px;" width="38%">
 							<tr>
-								<th>Sub Total : </th>
-								<td>
+								<td><p style="color: #fe5800; display: inline; font-size: 20px;">Grand Total : </p>
+								
 									<?php
 										echo $fm->format_currency($subtotal);
 										Session::set('sum',$subtotal);
 										Session::set('qty',$qty);
-									?>
-								</td>
-							</tr>
-							<tr>
-								<th>VAT (10%): </th>
-								<td><?php $vat = $subtotal * 0.1; echo $fm->format_currency($vat); ?></td>
-							</tr>
-							<tr>
-								<th>Grand Total :</th>
-								<td>
-									<?php
-										$vat = $subtotal *0.1;
-										$gtotal = $subtotal + $vat;
-										echo $fm->format_currency($gtotal);
 									?>
 								</td>
 							</tr>
