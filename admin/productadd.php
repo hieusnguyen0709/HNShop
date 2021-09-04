@@ -96,6 +96,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
                     </td>
                 </tr>
             
+
+                <tr>
+                    <td>
+                        <label>Quantity</label>
+                    </td>
+                    <td>
+                        <input type="text" name="quantity" placeholder="Enter Quantity..." class="medium" />
+                    </td>
+                </tr>
+
                 <tr>
                     <td>
                         <label>Upload Image</label>

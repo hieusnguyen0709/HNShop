@@ -18,6 +18,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
     }
 }*/
 ?>
+<?php
+if(isset($_GET['proid']))
+{
+	$id = $_GET['proid'];
+	$delete_wishlist = $product->delete_wishlist($id);
+}
+?>
  <div class="main">
     <div class="content">
     	<div class="cartoption">		
@@ -58,7 +65,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 								<td><?php echo $result['productName'] ?></td>
 								<td><img src="admin/uploads/<?php echo $result['image'] ?>"  alt=""/></td>
 								<td><?php echo $fm->format_currency($result['price']) ?></td>
-								<td><a href="details.php?proid=<?php echo $result['productId'] ?>">View</a></td>
+								<td>
+									<a href="details.php?proid=<?php echo $result['productId'] ?>">View</a> | 
+									<a onclick="return confirm('Do you want to delete ?')" href="?proid=<?php echo $result['productId']?>">Delete</a></td>
+								</td>
 							</tr>
 							<?php
 									}

@@ -123,6 +123,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
             
                 <tr>
                     <td>
+                        <label>Quantity</label>
+                    </td>
+                    <td>
+                        <input type="text" value="<?php echo $result_product['quantity'] ?>" name="quantity" class="medium" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
                         <label>Upload Image</label>
                     </td>
                     <td>

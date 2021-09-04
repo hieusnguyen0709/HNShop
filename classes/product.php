@@ -21,7 +21,8 @@ include_once ($filepath.'/../helpers/format.php');
 		$brand = mysqli_real_escape_string($this->db->link, $data['brand']); 
 		$category = mysqli_real_escape_string($this->db->link, $data['category']); 
 		$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']); 
-		$price = mysqli_real_escape_string($this->db->link, $data['price']); 
+		$price = mysqli_real_escape_string($this->db->link, $data['price']);
+		$quantity = mysqli_real_escape_string($this->db->link, $data['quantity']); 
 		$type = mysqli_real_escape_string($this->db->link, $data['type']); 
 		//Ket noi toi CSDL
 		//mysqli gọi 2 biến. (catName and link) biến link -> gọi conect db từ file db
@@ -37,8 +38,7 @@ include_once ($filepath.'/../helpers/format.php');
 		$unique_image = substr(md5(time()), 0,10).'.'.$file_ext;
 		$uploaded_image = "uploads/".$unique_image;
 		
-		if($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || 
-		   $type == "" || $file_name == "")
+		if($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $quantity == ""|| $type == "" || $file_name == "")
 		{
 			$alert = "<span class='error'>Fields must be not empty</span>";
 			return $alert;
@@ -46,7 +46,7 @@ include_once ($filepath.'/../helpers/format.php');
 		else
 		{
 			move_uploaded_file($file_temp, $uploaded_image);
-			$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image')";
+			$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,quantity,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$quantity','$type','$unique_image')";
 			$result = $this->db->insert($query);
 			if($result)
 			{
@@ -87,6 +87,7 @@ include_once ($filepath.'/../helpers/format.php');
 		$category = mysqli_real_escape_string($this->db->link, $data['category']); 
 		$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']); 
 		$price = mysqli_real_escape_string($this->db->link, $data['price']); 
+		$quantity = mysqli_real_escape_string($this->db->link, $data['quantity']); 
 		$type = mysqli_real_escape_string($this->db->link, $data['type']); 
 		//Ket noi toi CSDL
 		//mysqli gọi 2 biến. (catName and link) biến link -> gọi conect db từ file db
@@ -102,8 +103,7 @@ include_once ($filepath.'/../helpers/format.php');
 		$unique_image = substr(md5(time()), 0,10).'.'.$file_ext;
 		$uploaded_image = "uploads/".$unique_image;
 
-		if($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || 
-		   $type == "")
+		if($productName == "" || $brand == "" || $category == "" || $product_desc == "" || $price == "" || $quantity == "" || $type == "")
 		{
 			$alert = "<span class='error'>Fields must be not empty</span>";
 			return $alert;
@@ -123,7 +123,8 @@ include_once ($filepath.'/../helpers/format.php');
 				brandId = '$brand',
 				catId = '$category', 
 				type = '$type', 
-				price = '$price', 
+				price = '$price',
+				quantity = '$quantity', 
 				image = '$unique_image',
 				product_desc = '$product_desc'
 				WHERE productId = '$id'";
@@ -147,6 +148,7 @@ include_once ($filepath.'/../helpers/format.php');
 				catId = '$category',
 				type = '$type',
 				price = '$price',
+				quantity = '$quantity', 
 				product_desc = '$product_desc'
 				WHERE productId = '$id'";
 			}
@@ -319,6 +321,13 @@ include_once ($filepath.'/../helpers/format.php');
 		$query = "SELECT * FROM tbl_compare WHERE customer_id = '$customer_id' ORDER BY id desc";
 	 	$result = $this->db->select($query);
 	 	return $result; 	
+	 }
+
+	 public function delete_wishlist($id)
+	 {
+		$query = "DELETE FROM tbl_compare WHERE productId = '$id'";
+	 	$result = $this->db->delete($query);
+	 	return $result;
 	 }
 
 	 public function insert_slider($data,$files)

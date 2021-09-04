@@ -34,44 +34,44 @@ $cs = new customer();
                     <table class="form">					
                         <tr>
                             <td>Name</td>
-                            <td>:</td>
+                            <td> </td>
                             <td>
-                                <input type="text" readonly="readonly" value="<?php echo $result['name'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
+                                <input type="text" readonly="readonly" value="<?php echo $result['name'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>Phone</td>
                             <td> </td>
                             <td>
-                                <input type="text" readonly="readonly" value="<?php echo $result['phone'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
+                                <input type="text" readonly="readonly" value="<?php echo $result['phone'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>City</td>
                             <td> </td>
                             <td>
-                                <input type="text" readonly="readonly" value="<?php echo $result['city'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
+                                <input type="text" readonly="readonly" value="<?php echo $result['city'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                          <tr>
                             <td>Country</td>
                             <td> </td>
                             <td>
-                                <input type="text" readonly="readonly" value="<?php echo $result['country'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
+                                <input type="text" readonly="readonly" value="<?php echo $result['country'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>Address</td>
                             <td> </td>
                             <td>
-                                <input type="text" readonly="readonly" value="<?php echo $result['address'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
+                                <input type="text" readonly="readonly" value="<?php echo $result['address'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
                             <td>Email</td>
                             <td> </td>
                             <td>
-                                <input type="text" readonly="readonly" value="<?php echo $result['email'] ?>" name="catName" placeholder="Update Category Name..." class="medium" />
+                                <input type="text" readonly="readonly" value="<?php echo $result['email'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                        

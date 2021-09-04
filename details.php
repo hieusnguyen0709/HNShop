@@ -44,12 +44,18 @@ if(isset($_POST['binhluan_submit']))
 						<img height="150px" width="200px" src="admin/uploads/<?php echo $result['image'] ?>" alt="" />
 					</div>
 				<div class="desc span_3_of_2">
-					<h2><?php echo $result['productName'] ?></h2>				
-					<div class="price">
-						<p>Price: <span><?php echo $fm->format_currency($result['price']) ?></span></p>
-						<p>Category: <span><?php echo $result['catName'] ?></span></p>
-						<p>Brand:<span><?php echo $result['brandName'] ?></span></p>
-					</div>
+				<h2><?php echo $result['productName'] ?></h2>
+
+				<?php
+					if($result['quantity']>0)
+					{
+				?>
+				<div class="price">
+					<p>Price: <span><?php echo $fm->format_currency($result['price']) ?></span></p>
+					<p>In Stock: <span><?php echo $result['quantity'] ?></span></p>
+					<p>Category: <span><?php echo $result['catName'] ?></span></p>
+					<p>Brand:<span><?php echo $result['brandName'] ?></span></p>
+				</div>
 				<div class="">
 					<form action="" method="post">
 						<input type="number" class="buyfield" name="quantity" value="1" min="1" />
@@ -63,6 +69,15 @@ if(isset($_POST['binhluan_submit']))
 						}
 					?>		
 				</div>
+				<?php
+					}
+					else
+					{
+				?>
+					<span class="error" style="font-family: 'Monda', sans-serif; font-size: 25px;">PRODUCT IS NOT AVAILABLE !</span></br>
+				<?php 
+					}
+				?>
 				<div class="">
 					<form action="" method="POST">
 						<input type="hidden" name="productid" value="<?php echo $result['productId'] ?>"/>

@@ -17,13 +17,18 @@ include_once ($filepath.'/../helpers/format.php');
 
 	 public function add_to_cart($quantity,$id)
 	 {
+	 	//Số lượng do khách nhập
+	 	$GLOBALS['changed_cart'] = false;
 	 	$quantity = $this->fm->validation($quantity);
-	 	$quantity = mysqli_real_escape_string($this->db->link, $quantity); 
+	 	$quantity = mysqli_real_escape_string($this->db->link, $quantity);//51
+
 		$id = mysqli_real_escape_string($this->db->link, $id); 
 		$sId = session_id();
 
+		//Số lượng tồn trong kho
 		$query = "SELECT * FROM tbl_product WHERE productId = '$id'";
 		$result = $this->db->select($query)->fetch_assoc();
+		$quantity_in_stock = $result['quantity'];//50
 		
 		$image = $result['image'];
 		$price = $result['price'];
@@ -38,12 +43,27 @@ include_once ($filepath.'/../helpers/format.php');
 		}
 		else
 		{
-			$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) 
-			VALUES('$id','$quantity','$sId','$image','$price','$productName')";
-			$insert_cart = $this->db->insert($query_insert);
-			if($result)
+			if($quantity > $quantity_in_stock)
 			{
-				header('Location:cart.php');
+				$GLOBALS['changed_cart'] = true;
+				$quantity = $quantity_in_stock;
+				$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) 
+				VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+				$insert_cart = $this->db->insert($query_insert);
+				if($result)
+				{
+					header('Location:cart.php');
+				}
+			}
+			else
+			{
+				$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) 
+				VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+				$insert_cart = $this->db->insert($query_insert);
+				if($result)
+				{
+					header('Location:cart.php');
+				}	
 			}
 		}
 	 }
@@ -56,23 +76,52 @@ include_once ($filepath.'/../helpers/format.php');
 	 	return $result;
 	 }
 
-	 public function update_quantity_cart($quantity,$cartId)
+	 public function update_quantity_cart($quantity,$cartId,$productId)
 	 {
-	 	$quantity = mysqli_real_escape_string($this->db->link, $quantity); 
+	 	//Số lượng do khách nhập
+	 	$quantity = mysqli_real_escape_string($this->db->link, $quantity);//51 
 		$cartId = mysqli_real_escape_string($this->db->link, $cartId); 
-		$query = "UPDATE tbl_cart SET 
-		quantity = '$quantity'
-		WHERE cartId = '$cartId'";
-		$result = $this->db->update($query);
-	 	if($result)
-	 	{
-	 		header('Location:cart.php');
-	 	}
-	 	else
-	 	{
-	 		$msg = "<span style='color:red;font-size:18px'>Product Quantity Updated Not Successfully</span>";
-			return $msg;
-	 	}
+
+		//Số lượng tồn trong kho
+		$query = "SELECT * FROM tbl_cart C JOIN tbl_product P ON C.productId = P.productId 
+				  WHERE cartId = '$cartId'";
+		$qty_result = $this->db->select($query)->fetch_assoc();
+		$quantity_in_stock = $qty_result['quantity'];//50
+
+		if($quantity > $quantity_in_stock)
+		{
+			$quantity = $quantity_in_stock;
+			$query = "UPDATE tbl_cart SET 
+			quantity = '$quantity'
+			WHERE cartId = '$cartId'";
+			$result = $this->db->update($query);
+		 	if($result)
+		 	{
+		 		header('Location:cart.php');
+		 	}
+		 	else
+		 	{
+		 		$msg = "<span style='color:red;font-size:18px'>Product Quantity Updated Not Successfully</span>";
+				return $msg;
+		 	}
+		}
+		else
+		{
+			$query = "UPDATE tbl_cart SET 
+			quantity = '$quantity'
+			WHERE cartId = '$cartId'";
+			$result = $this->db->update($query);
+		 	if($result)
+		 	{
+		 		header('Location:cart.php');
+		 	}
+		 	else
+		 	{
+		 		$msg = "<span style='color:red;font-size:18px'>Product Quantity Updated Not Successfully</span>";
+				return $msg;
+		 	}
+		}
+		
 	 }
 	 public function del_product_cart($cartid)
 	 {
@@ -108,6 +157,13 @@ include_once ($filepath.'/../helpers/format.php');
 	public function insertOrder($customer_id)
 		{
 			$sId = session_id();
+			//Lấy số lượng hàng tồn trong kho để trừ đi số lượng hàng được khách đặt 
+			$query = "SELECT * FROM tbl_cart C JOIN tbl_product P ON C.productId = P.productId 
+				 	  WHERE sId = '$sId'";
+			$qty_result = $this->db->select($query)->fetch_assoc();
+			$quantity_in_stock = $qty_result['quantity'];
+
+			//Lưu đơn hàng vào DB
 			$query = "SELECT * FROM tbl_cart WHERE sId = '$sId'";
 			$get_product = $this->db->select($query);
 			if($get_product)
@@ -122,7 +178,17 @@ include_once ($filepath.'/../helpers/format.php');
 					$customer_id = $customer_id;
 					$query_order = "INSERT INTO tbl_order(productId,productName,quantity,price,image,customer_id) VALUES('$productid','$productName','$quantity','$price','$image','$customer_id')";
 					$insert_order = $this->db->insert($query_order);
+
+					//Số lượng hàng tồn sau khi đặt = số lượng tồn hiện tại - số lượng vừa được đặt // 6 - 2 = 4
+					$update_quantity_after_order = $qty_result['quantity'] - $quantity;
+					$query_update_quantity_after_order = 
+					"UPDATE tbl_product SET 
+					quantity = '$update_quantity_after_order'
+					WHERE productId = '$productid'";
+					$result = $this->db->update($query_update_quantity_after_order);
 				}
+
+
 			}
 		}
 

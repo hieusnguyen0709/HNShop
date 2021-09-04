@@ -10,8 +10,9 @@ if(isset($_GET['cartid']))
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 {
 	$cartId = $_POST['cartId'];
+	$productId = $_POST['productId'];
 	$quantity = $_POST['quantity'];
-    $update_quantity_cart = $ct->update_quantity_cart($quantity,$cartId);
+    $update_quantity_cart = $ct->update_quantity_cart($quantity,$cartId,$productId);
     if($quantity<=0)
     {
     	$delcart = $ct->del_product_cart($cartId);
@@ -67,6 +68,7 @@ if(!isset($_GET['id']))
 								<td>
 									<form action="" method="post">
 										<input type="hidden" name="cartId" value="<?php echo $result['cartId'] ?>"/>
+										<input type="hidden" name="productId" value="<?php echo $result['productId'] ?>"/>
 										<input type="number" name="quantity" min="0" value="<?php echo $result['quantity'] ?>"/>
 										<input type="submit" name="submit" value="Update"/>
 									</form>

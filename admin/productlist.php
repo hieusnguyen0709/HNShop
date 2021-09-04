@@ -28,6 +28,7 @@ if(isset($_GET['productid']))
 					<th>ID</th>
 					<th>Product Name</th>
 					<th>Product Price</th>
+					<th>In Stock</th>
 					<th>Product Image</th>
 					<th>Category</th>
 					<th>Brand</th>
@@ -53,6 +54,7 @@ if(isset($_GET['productid']))
 					<td><?php echo $i; ?></td>
 					<td><?php echo $result['productName'] ?></td>
 					<td><?php echo $fm->format_currency($result['price']) ?></td>
+					<td><?php echo $result['quantity'] ?></td>
 					<td><img src="uploads/<?php echo $result['image'] ?>" width="80px" height="80px"></td>
 					<td><?php echo $result['catName'] ?></td>
 					<td><?php echo $result['brandName'] ?></td>
