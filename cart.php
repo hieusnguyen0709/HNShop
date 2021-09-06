@@ -44,12 +44,12 @@ if(!isset($_GET['id']))
 			    	?>
 						<table class="tblone">
 							<tr>
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="15%">Price</th>
-								<th width="25%">Quantity</th>
-								<th width="20%">Total Price</th>
-								<th width="10%">Action</th>
+								<th width="20%">Tên Sản Phẩm</th>
+								<th width="10%">Hình Ảnh</th>
+								<th width="15%">Đơn Giá</th>
+								<th width="25%">Số Lượng</th>
+								<th width="20%">Số Tiền</th>
+								<th width="10%">Thao Tác</th>
 							</tr>
 							<?php
 								$get_product_cart = $ct->get_product_cart();
@@ -79,7 +79,7 @@ if(!isset($_GET['id']))
 										echo $fm->format_currency($total);
 									?>
 								</td>
-								<td><a onclick="return confirm('Do you want to delete ?')" href="?cartid=<?php echo $result['cartId'] ?>">Delete</a></td>
+								<td><a onclick="return confirm('Có phải bạn muốn xóa sản phẩm này ra khỏi đơn hàng không?')" href="?cartid=<?php echo $result['cartId'] ?>">Delete</a></td>
 							</tr>
 							<?php
 									$subtotal += $total;
@@ -110,7 +110,7 @@ if(!isset($_GET['id']))
 					   		}
 					   		else
 					   		{
-					   			echo '<span style="font-size:20px; color:red;">Your cart is Empty<s/span>';
+					   			echo '<span style="font-size:20px; color:red;">Giỏ hàng đang trống<s/span>';
 					   		}
 					   ?>
 					</div>
