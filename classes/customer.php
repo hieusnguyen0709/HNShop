@@ -97,6 +97,20 @@ include_once ($filepath.'/../helpers/format.php');
 		return $result;
 	}
 
+	public function select_all_customers()
+	{
+		$query ="SELECT * FROM tbl_customer";
+		$result = $this->db->select($query);
+		return $result;
+	}
+
+	public function delete_customer($id)
+	{
+		$query ="DELETE FROM tbl_customer WHERE id ='$id'";
+		$result = $this->db->delete($query);
+		return $result;
+	}
+
 	public function update_customers($data,$id)
 	{
 		$name = mysqli_real_escape_string($this->db->link, $data['name']);

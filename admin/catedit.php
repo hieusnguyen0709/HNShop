@@ -48,6 +48,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                             <td>
                                 <input type="submit" name="submit" Value="Edit" />
                             </td>
+
                         </tr>
                     </table>
                     </form>
@@ -55,7 +56,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                         }
                     }
                 ?>
+
                 </div>
             </div>
         </div>
+
 <?php include 'inc/footer.php'; ?>

@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login']))
 
     	<div class="register_account">
     		<h3>Register New Account</h3>
-    				    <?php
+    		<?php
 		    	if(isset($insertCustomer))
 		    	{
 		    		echo $insertCustomer;

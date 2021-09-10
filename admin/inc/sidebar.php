@@ -9,6 +9,12 @@
                         <li><a href="copyright.php">Copyright</a></li>       
                     </ul>
                 </li>
+                <li><a class="menuitem">User Option</a>
+                    <ul class="submenu">
+                        <li><a href="adduser.php">Add User</a> </li>
+                        <li><a href="listuser.php">User List</a> </li>
+                    </ul>
+                </li>
 				<li><a class="menuitem">Category Option</a>
                     <ul class="submenu">
                         <li><a href="catadd.php">Add Category</a> </li>
