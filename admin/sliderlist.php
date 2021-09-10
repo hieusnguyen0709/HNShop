@@ -38,7 +38,7 @@
 			<tbody>
 				<?php
 					$product = new product();
-					$get_slider = $product->select_slider();
+					$get_slider = $product->select_slider_admin();
 					if($get_slider)
 					{
 						$i = 0;
@@ -55,13 +55,13 @@
 							if($result['type'] == 1)
 							{
 						?>
-						<a href="?del_slider=<?php echo $result['sliderId'] ?>&type='0'">Off</a> 
+						<a style="color: red" href="?del_slider=<?php echo $result['sliderId'] ?>&type=0">Off</a> 
 						<?php
 							}
 							else if($result['type'] == 0)
 							{
 						?>
-						<a href="?del_slider=<?php echo $result['sliderId'] ?>&type='1'">On</a> 
+						<a style="color: green" href="?del_slider=<?php echo $result['sliderId'] ?>&type=1">On</a> 
 						<?php
 							}
 						?>

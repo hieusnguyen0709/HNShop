@@ -391,6 +391,13 @@ include_once ($filepath.'/../helpers/format.php');
 	 	return $result;
 	 }
 
+	 public function select_slider_admin()
+	 {
+	 	$query = "SELECT * FROM tbl_slider";
+	 	$result=$this->db->select($query);
+	 	return $result;
+	 }
+
 	 public function update_type_slider($id,$type)
 	 {
 	 	$type = mysqli_real_escape_string($this->db->link, $type); 
