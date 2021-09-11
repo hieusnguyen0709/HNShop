@@ -44,7 +44,7 @@ include_once ($filepath.'/../helpers/format.php');
 			}
 			else
 			{
-				$query = "INSERT INTO tbl_customer(name,city,zipcode,email,address,country,phone,password) VALUES('$name','$city','$zipcode','$email','$address','$country','$phone','$password')";
+				$query = "INSERT INTO tbl_customer(name,city,zipcode,email,address,country,phone,password,status) VALUES('$name','$city','$zipcode','$email','$address','$country','$phone','$password','0')";
 				$result = $this->db->insert($query);
 				if($result)
 				{
@@ -72,7 +72,7 @@ include_once ($filepath.'/../helpers/format.php');
 		}
 		else
 		{
-			$check_login ="SELECT * FROM tbl_customer WHERE email='$email' AND password='$password' LIMIT 1";
+			$check_login ="SELECT * FROM tbl_customer WHERE email='$email' AND password='$password' AND status='0' LIMIT 1";
 			$result_check = $this->db->select($check_login);
 			if($result_check != false)
 			{
@@ -82,6 +82,7 @@ include_once ($filepath.'/../helpers/format.php');
 				Session::set('customer_name',$value['name']);
 				header('location:index.php');
 			}
+
 			else
 			{
 				$alert = "<span style='color:red; font-size:18px;'>Email or Password doesn't match !</span>";
@@ -143,6 +144,14 @@ include_once ($filepath.'/../helpers/format.php');
 					return $alert;
 				}
 		}		
+	}
+
+	public function update_status_user($id,$status)
+	{
+		$status = mysqli_real_escape_string($this->db->link, $status); 
+	 	$query = "UPDATE tbl_customer SET status = '$status' WHERE id = '$id' ";
+	 	$result=$this->db->update($query);
+	 	return $result;
 	}
 
 	public function insert_binhluan()

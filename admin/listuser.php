@@ -10,6 +10,14 @@ if(isset($_GET['customerid']))
 	$delete_customer = $cs->delete_customer($id);
 }
 ?>
+<?php
+if(isset($_GET['id']) && isset($_GET['status']))
+	{
+		$id = $_GET['id'];
+		$status = $_GET['status'];
+		$update_status_user = $cs->update_status_user($id,$status);
+	}
+?>
 <div class="grid_10">
     <div class="box round first grid">
         <h2>User List</h2>
@@ -42,7 +50,22 @@ if(isset($_GET['customerid']))
 					<td><?php echo $result['email'] ?></td>
 					<td><?php echo $result['password'] ?></td>
 					<td><?php echo $result['created_date'] ?></td>
-					<td>Active</td>
+					<td>
+						<?php
+							if($result['status'] == 1)
+							{
+						?>
+						<a style="color: green" href="?id=<?php echo $result['id'] ?>&status=0">Active</a> 
+						<?php
+							}
+							else if($result['status'] == 0)
+							{
+						?>
+						<a style="color: red" href="?id=<?php echo $result['id'] ?>&status=1">Unactive</a> 
+						<?php
+							}
+						?>
+					</td>
 					<td> 
 					<a href="edituser.php?customerid=<?php echo $result['id']?>">View</a> || 
 					<a href="?customerid=<?php echo $result['id'] ?>" onclick="return confirm('Are you sure to Delete!');">Delete</a></td>
