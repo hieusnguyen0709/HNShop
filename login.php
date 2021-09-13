@@ -34,9 +34,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login']))
         	<form action="" method="POST">
                 	<input type="text" name="email" class="field" placeholder="Enter Email...">
                     <input type="password" name="password" class="field" placeholder="Enter Password...">
-                 
-                 <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p>
                     <div class="buttons"><div><button type="submit" class="grey" name="login">Sign In</button></div></div>
+                    <p></p>
+                    <a href="#"><img src="images/login_fb.png" style="border-radius: 3px"></a>
+                    <p></p>
+                    <a href="#"><img src="images/login_gg.png" style="border-radius: 3px"></a>
             </form>
         </div>
 
@@ -81,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login']))
 						</div>        
 		    			</td>
 		    </tr> 
-		    </tbody></table> 
+		    </tbody></table> </br> 
 		   <div class="search"><div><button type="submit" name="submit" class="grey">Create Account</button> </div></div>
 		    <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
 		    <div class="clear"></div>
