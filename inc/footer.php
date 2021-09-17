@@ -4,45 +4,43 @@
    	  <div class="wrapper">	
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
-						<h4>Information</h4>
+						<h4>Thông tin</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
-						<li><a href="#"><span>Advanced Search</span></a></li>
-						<li><a href="#">Orders and Returns</a></li>
-						<li><a href="#"><span>Contact Us</span></a></li>
+						<li><a href="#"><span>Về chúng tôi</span></a></li>
+						<li><a href="#"><span>Dịch vụ khách hàng</span></a></li>
+						<li><a href="#"><span>Giao dịch và Hoàn trả</span></a></li>
+						<li><a href="contact.php"><span>Liên hệ với chúng tôi</span></a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Why buy from us</h4>
+					<h4>Tại sao lại là HNShop</h4>
 						<ul>
-						<li><a href="about.php">About Us</a></li>
-						<li><a href="faq.php">Customer Service</a></li>
-						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="contact.php"><span>Về chúng tôi</span></a></li>
+						<li><a href="#"><span>Dịch vụ khách hàng</span></a></li>
+						<li><a href="#"><span>Chính sách bảo mật</span></a></li>
 						<li><a href="contact.php"><span>Site Map</span></a></li>
-						<li><a href="details.php"><span>Search Terms</span></a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>My account</h4>
+					<h4>Tài khoản</h4>
 						<ul>
-							<li><a href="login.php">Sign In</a></li>
-							<li><a href="cart.php">View Cart</a></li>
-							<li><a href="wishlist.php">My Wishlist</a></li>
-							<li><a href="orderdetails.php">Track My Order</a></li>
-							<li><a href="faq.php">Help</a></li>
+							<li><a href="login.php"><span>Đăng nhập</span></a></li>
+							<li><a href="cart.php"><span>Xem giỏ hàng</span></a></li>
+							<li><a href="wishlist.php"><span>My Wishlist</span></a></li>
+							<li><a href="orderdetails.php"><span>Theo dõi đơn hàng</span></a></li>
+							<li><a href="contact.php"><span>Trợ giúp</span></a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Contact</h4>
+					<h4>Liên Hệ</h4>
 						<ul>
-							<li><span>+ 0365549764</span></li>
-							<li><span>+ 0971376033</span></li>						
+							<li><span>Mr. Hiếu: 0365549764</span></li>
+							<li><span>Mr.Huy: 0971376033</span></li>						
 						</ul>
 						<div class="social-icons">
-							<h4>Follow Us</h4>
+							<h4>Theo dõi chúng tôi</h4>
 					   		  <ul>
-							      <li class="facebook"><a href="#" target="_blank"> </a></li>
+							      <li class="facebook"><a href="https://www.facebook.com/SuperLoPho/" target="_blank"></a></li>
 							      <li class="twitter"><a href="#" target="_blank"> </a></li>
 							      <li class="googleplus"><a href="#" target="_blank"> </a></li>
 							      <li class="contact"><a href="#" target="_blank"> </a></li>
@@ -51,9 +49,6 @@
    	 					</div>
 				</div>
 			</div>
-			<div class="copy_right">
-				<p>HNShop &amp; All rights Reseverd </p>
-		   </div>
      </div>
     </div>
 

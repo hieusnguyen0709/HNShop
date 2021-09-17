@@ -16,7 +16,7 @@
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    		<h3>Feature Products</h3>
+    		<h3>Sản phẩm nổi bật</h3>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -33,7 +33,7 @@
 					 <h2><?php echo $result['productName'] ?></h2>
 					 <p><?php echo $fm->textShorten($result['product_desc'], 30) ?></p>
 					 <p><span class="price"><?php echo $fm->format_currency($result['price']) ?></span></p>
-				     <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>" class="details">Details</a></span></div>
+				     <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>" class="details">Chi tiết</a></span></div>
 				</div>
 			<?php
 					}
@@ -42,7 +42,7 @@
 			</div>
 			<div class="content_bottom">
     		<div class="heading">
-    		<h3>New Products</h3>
+    		<h3>Sản phẩm mới</h3>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -59,7 +59,7 @@
 					 <h2><?php echo $result['productName'] ?></h2>
 					 <p><?php echo $fm->textShorten($result['product_desc'], 30) ?></p>
 					 <p><span class="price"><?php echo $fm->format_currency($result['price']) ?></span></p>
-				     <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>" class="details">Details</a></span></div>
+				     <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>" class="details">Chi tiết</a></span></div>
 				</div>
 				
 			<?php
