@@ -226,55 +226,55 @@ include_once ($filepath.'/../helpers/format.php');
 
 	 public function getLastestIphone()
 	 {
-	 	$query = "SELECT * FROM tbl_product WHERE brandId = '9' ORDER BY productId desc LIMIT 1";
+	 	$query = "SELECT * FROM tbl_product WHERE brandId = '15' ORDER BY productId desc LIMIT 1";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }
 
 	public function getIphone()
 	 {
-	 	$query = "SELECT * FROM tbl_product WHERE brandId = '9' ORDER BY productId desc LIMIT 4";
+	 	$query = "SELECT * FROM tbl_product WHERE brandId = '15' ORDER BY productId desc LIMIT 4";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }
 
 	 public function getLastestOppo()
 	 {
-	 	$query = "SELECT * FROM tbl_product WHERE brandId = '10' ORDER BY productId desc LIMIT 1";
+	 	$query = "SELECT * FROM tbl_product WHERE brandId = '12' ORDER BY productId desc LIMIT 1";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }
 
 	public function getOppo()
 	 {
-	 	$query = "SELECT * FROM tbl_product WHERE brandId = '10' ORDER BY productId desc LIMIT 4";
+	 	$query = "SELECT * FROM tbl_product WHERE brandId = '12' ORDER BY productId desc LIMIT 4";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }
 	 public function getLastestXiaomi()
 	 {
-	 	$query = "SELECT * FROM tbl_product WHERE brandId = '11' ORDER BY productId desc LIMIT 1";
+	 	$query = "SELECT * FROM tbl_product WHERE brandId = '13' ORDER BY productId desc LIMIT 1";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }
 
 	  public function getXiaomi()
 	 {
-	 	$query = "SELECT * FROM tbl_product WHERE brandId = '11' ORDER BY productId desc LIMIT 4";
+	 	$query = "SELECT * FROM tbl_product WHERE brandId = '13' ORDER BY productId desc LIMIT 4";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }
 
 	 public function getLastestSamsung()
 	 {
-	 	$query = "SELECT * FROM tbl_product WHERE brandId = '8' ORDER BY productId desc LIMIT 1";
+	 	$query = "SELECT * FROM tbl_product WHERE brandId = '14' ORDER BY productId desc LIMIT 1";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }
 
 	 public function getSamsung()
 	 {
-	 	$query = "SELECT * FROM tbl_product WHERE brandId = '8' ORDER BY productId desc LIMIT 4";
+	 	$query = "SELECT * FROM tbl_product WHERE brandId = '14' ORDER BY productId desc LIMIT 4";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }

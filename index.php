@@ -88,6 +88,18 @@
 			
     </div>
  </div>
+ <?php
+if(isset($_SESSION['fb_user_id'])) 
+{
+	$fb_user_id = $_SESSION['fb_user_id'];
+	$fb_user_name = $_SESSION['fb_user_name'];
+	$fb_user_email = $_SESSION['fb_user_email'];
+	echo $fb_user_email;
+	echo $fb_user_name;
+	echo $fb_user_id;
+
+}
+?>
 <?php
 	include 'inc/footer.php';
 ?>

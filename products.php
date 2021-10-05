@@ -16,7 +16,7 @@
 
     	<div class="content_top">
     		<div class="heading">
-    		<h3>IPHONE</h3>
+    		<h3>Self-help</h3>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -64,7 +64,7 @@
 
     	<div class="content_top">
     		<div class="heading">
-    		<h3>SAMSUNG</h3>
+    		<h3>Tiểu thuyết</h3>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -112,7 +112,7 @@
 
     	<div class="content_top">
     		<div class="heading">
-    		<h3>XIAOMI</h3>
+    		<h3>Lãng mạn</h3>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -160,7 +160,7 @@
 
     	<div class="content_top">
     		<div class="heading">
-    		<h3>OPPO</h3>
+    		<h3>Truyện tranh</h3>
     		</div>
     		<div class="clear"></div>
     	</div>

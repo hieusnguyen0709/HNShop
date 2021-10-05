@@ -26,6 +26,7 @@ if(isset($_GET['id']) && isset($_GET['status']))
 			<thead>
 				<tr>
 					<th>ID</th>
+					<th>Name</th>
 					<th>Email</th>
 					<th>Password</th>
 					<th>Created Date</th>
@@ -47,6 +48,7 @@ if(isset($_GET['id']) && isset($_GET['status']))
 				?>
 				<tr class="odd gradeX">
 					<td><?php echo $i; ?></td>
+					<td><?php echo $result['name'] ?></td>
 					<td><?php echo $result['email'] ?></td>
 					<td><?php echo $result['password'] ?></td>
 					<td><?php echo $result['created_date'] ?></td>

@@ -59,7 +59,7 @@ include_once ($filepath.'/../helpers/format.php');
 			}
 		}
 	}
-
+	
 	public function login_customer($data)
 	{
 		$email = mysqli_real_escape_string($this->db->link, $data['email']);

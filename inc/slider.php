@@ -13,7 +13,7 @@
 						 <a href="details.php?proid=<?php echo $result['productId']?>"> <img src="admin/uploads/<?php echo $result['image'] ?>" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
-						<h2>Iphone</h2>
+						<h2>Self-help</h2>
 						<p><?php echo $result['productName'] ?></p>
 						<div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Add to cart</a></span></div>
 				   </div>
@@ -23,7 +23,7 @@
 			   		}
 			   ?>		
 				<?php
-					$getLastestSamsung = $product->getLastestSamsung();
+					$getLastestSamsung = $product->getLastestOppo();
 					if($getLastestSamsung)
 					{
 						while($result = $getLastestSamsung->fetch_assoc())
@@ -31,10 +31,10 @@
 				?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						  <a href="details.php"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" / ></a>
+						  <a href="details.php?proid=<?php echo $result['productId']?>""><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" / ></a>
 					</div>
 					<div class="text list_2_of_1">
-						  <h2>Samsung</h2>
+						  <h2>Truyện</h2>
 						  <p><?php echo $result['productName'] ?></p>
 						  <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Add to cart</a></span></div>
 					</div>
@@ -54,10 +54,10 @@
 				?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="details.php"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" / ></a>
+						 <a href="details.php?proid=<?php echo $result['productId']?>""><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" / ></a>
 					</div>
 				    <div class="text list_2_of_1">
-						<h2>Xiaomi</h2>
+						<h2>Lãng mạn</h2>
 						<p><?php echo $result['productName'] ?></p>
 						<div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Add to cart</a></span></div>
 				   </div>
@@ -67,7 +67,7 @@
 			   		}
 			  	?>		
 				<?php
-					$getLastestOppo = $product->getLastestOppo();
+					$getLastestOppo = $product->getLastestSamsung();
 					if($getLastestOppo)
 					{
 						while($result = $getLastestOppo->fetch_assoc())
@@ -75,10 +75,10 @@
 				?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="details.php"><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" / ></a>
+						 <a href="details.php?proid=<?php echo $result['productId']?>""><img src="admin/uploads/<?php echo $result['image'] ?>" alt="" / ></a>
 					</div>
 					<div class="text list_2_of_1">
-						  <h2>Oppo</h2>
+						  <h2>Tiểu thuyết</h2>
 						  <p><?php echo $result['productName'] ?></p>
 						  <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Add to cart</a></span></div>
 					</div>
