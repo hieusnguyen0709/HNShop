@@ -6,11 +6,7 @@
 				<div class="col_1_of_4 span_1_of_4">
 						<h4>Information</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
-						<li><a href="#"><span>Advanced Search</span></a></li>
-						<li><a href="#">Orders and Returns</a></li>
-						<li><a href="#"><span>Contact Us</span></a></li>
+							
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">

@@ -2,7 +2,9 @@
 $filepath = realpath(dirname(__FILE__));
 include_once ($filepath.'/../lib/database.php');
 include_once ($filepath.'/../helpers/format.php');
+include_once ($filepath.'/../meRaviQr/qrlib.php');
 ?>
+
 <?php
  class product
  {
@@ -24,6 +26,7 @@ include_once ($filepath.'/../helpers/format.php');
 		$price = mysqli_real_escape_string($this->db->link, $data['price']);
 		$quantity = mysqli_real_escape_string($this->db->link, $data['quantity']); 
 		$type = mysqli_real_escape_string($this->db->link, $data['type']); 
+		$qrId = rand(1,1000);
 		//Ket noi toi CSDL
 		//mysqli gọi 2 biến. (catName and link) biến link -> gọi conect db từ file db
 			
@@ -44,10 +47,22 @@ include_once ($filepath.'/../helpers/format.php');
 			return $alert;
 		}
 		else
-		{
+		{			
 			move_uploaded_file($file_temp, $uploaded_image);
-			$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,quantity,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$quantity','$type','$unique_image')";
+			$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,quantity,type,image,qrId) VALUES('$productName','$brand','$category','$product_desc','$price','$quantity','$type','$unique_image','$qrId')";
 			$result = $this->db->insert($query);
+
+			$truyvan = "SELECT * FROM tbl_product WHERE qrId = '$qrId' LIMIT 1";
+			$rs_in_tbl_product = $this->db->select($truyvan)->fetch_assoc();
+			$productId = $rs_in_tbl_product['productId'];
+
+			$qrContent = "http://localhost/HNShop/details.php?proid=$productId";
+			$qrImgName = "QR_".rand();
+			$qrs = QRcode::png($qrContent,"../admin/uploads/$qrImgName.png","H","3","3");
+			$qrimage = $qrImgName.".png";
+			$sql = "INSERT INTO tbl_qrcode(qrId,qrContent,qrImg) VALUES('$qrId','http://localhost/HNShop/details.php?proid=$productId','$qrimage')";
+	 		$query = $this->db->insert($sql);
+
 			if($result)
 			{
 				$alert = "<span class='success'>Insert product successfully </span>";
@@ -63,12 +78,12 @@ include_once ($filepath.'/../helpers/format.php');
 
 	 public function select_product()
 	 {
-	 	$query = "SELECT tbl_product.*, tbl_category.catName, tbl_brand.brandName
+	 	$query = "SELECT tbl_product.*, tbl_category.catName, tbl_brand.brandName, tbl_qrcode.qrImg
 	 	FROM tbl_product 
 	 	INNER JOIN tbl_category ON tbl_product.catId = tbl_category.catId
 	 	INNER JOIN tbl_brand ON tbl_product.brandId = tbl_brand.brandId
+	 	INNER JOIN tbl_qrcode ON tbl_product.qrId = tbl_qrcode.qrId
 	 	ORDER BY tbl_product.productId desc";
-	 	//$query = "SELECT * FROM tbl_product ORDER BY productId desc";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }
@@ -215,11 +230,12 @@ include_once ($filepath.'/../helpers/format.php');
 
 	 public function get_details($id)
 	 {
-	 	$query = "SELECT tbl_product.*, tbl_category.catName, tbl_brand.brandName
+	 	$query = "SELECT tbl_product.*, tbl_category.catName, tbl_brand.brandName, tbl_qrcode.qrImg
 	 	FROM tbl_product 
 	 	INNER JOIN tbl_category ON tbl_product.catId = tbl_category.catId
-	 	INNER JOIN tbl_brand ON tbl_product.brandId = tbl_brand.brandId WHERE tbl_product.productId = '$id'";
-	 	//$query = "SELECT * FROM tbl_product ORDER BY productId desc";
+	 	INNER JOIN tbl_brand ON tbl_product.brandId = tbl_brand.brandId 
+	 	INNER JOIN tbl_qrcode ON tbl_product.qrId = tbl_qrcode.qrId
+	 	WHERE tbl_product.productId = '$id'";
 	 	$result = $this->db->select($query);
 	 	return $result;
 	 }

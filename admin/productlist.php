@@ -33,7 +33,7 @@ if(isset($_GET['productid']))
 					<th>Category</th>
 					<th>Brand</th>
 					<th>Description</th>
-					<th>Type</th>
+					<th>QR Code</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -55,7 +55,7 @@ if(isset($_GET['productid']))
 					<td><?php echo $result['productName'] ?></td>
 					<td><?php echo $fm->format_currency($result['price']) ?></td>
 					<td><?php echo $result['quantity'] ?></td>
-					<td><img src="uploads/<?php echo $result['image'] ?>" width="80px" height="80px"></td>
+					<td style="padding-top: 30px;"><img src="uploads/<?php echo $result['image'] ?>" width="80px" height="80px"></td>
 					<td><?php echo $result['catName'] ?></td>
 					<td><?php echo $result['brandName'] ?></td>
 					<td>
@@ -63,17 +63,8 @@ if(isset($_GET['productid']))
 						echo $fm->textShorten($result['product_desc'], 30); 
 					?>
 					</td>
-					<td>
-					<?php
-						if($result['type'] == 1)
-						{
-							echo 'Featured';
-						}
-						elseif($result['type'] == 0)
-						{
-							echo 'Non-featured';
-						}
-					?>
+					<td style="padding-top: 30px;">
+						<img src="uploads/<?php echo $result['qrImg'] ?>" width="80px" height="80px">
 					</td>
 					<td><a href="productedit.php?productid=<?php echo $result['productId']?>">Edit</a> || 
 						<a onclick="return confirm('Do you want to delete ?')" href="?productid=<?php echo $result['productId']?>">Delete</a></td>

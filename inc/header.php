@@ -25,6 +25,9 @@
   });
 </script>
 <?php
+// include "../meRaviQr/qrlib.php";
+?>
+<?php
 include 'lib/session.php';
 Session::init();
 ?>

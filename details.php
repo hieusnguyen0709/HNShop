@@ -41,7 +41,7 @@ if(isset($_POST['binhluan_submit']))
     		?>
 				<div class="cont-desc span_1_of_2">				
 					<div class="grid images_3_of_2">
-						<img height="150px" width="200px" src="admin/uploads/<?php echo $result['image'] ?>" alt="" />
+						<img height="200px" width="250px" src="admin/uploads/<?php echo $result['image'] ?>" alt="" />
 					</div>
 				<div class="desc span_3_of_2">
 				<h2><?php echo $result['productName'] ?></h2>
@@ -105,9 +105,13 @@ if(isset($_POST['binhluan_submit']))
 				</div>
 			</div>
 			<div class="product-desc">
+			<h2>QR CODE</h2>
+				<img src="admin/uploads/<?php echo $result['qrImg'] ?>" width="80px" height="80px">
+	    	</div>
+			<div class="product-desc">
 			<h2>Preview</h2>
-			<?php echo $result['product_desc'] ?>
-	    </div>			
+				<?php echo $result['product_desc'] ?>
+	    	</div>			
 	</div>
 	<?php
 	    			}
