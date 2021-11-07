@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
     	<div class="section group">
     	<div class="content_top">
     		<div class="heading">
-    		<h3>Update Profile Customer</h3>
+    		<h3>Cập nhật thông tin khách hàng</h3>
     		</div>
     		<div class="clear">		  
     		</div>
@@ -57,7 +57,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
     		   			{
     		   	?>
     		      <tr>
-    		        <td width="205" height="28" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;" >NAME</td>
+    		        <td width="205" height="28" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;" >TÊN</td>
                 <td><input style="font-family: 'Monda', sans-serif;" type="text" name="name" value="<?php echo $result['name'] ?>"> 
                 </td>
   		        </tr>
@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
                 </td>
   		        </tr>
     		      <tr>
-    		        <td height="35" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;">PHONE</td>
+    		        <td height="35" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;">SỐ ĐIỆN THOẠI</td>
                  <td><input style="font-family: 'Monda', sans-serif;" type="text" name="phone" value="<?php echo $result['phone'] ?>"> 
                 </td>
   		        </tr>
@@ -77,22 +77,22 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
                 </td>
   		        </tr>
     		      <tr>
-    		        <td height="35" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;">ADDRESS</td>
+    		        <td height="35" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;">ĐỊA CHỈ</td>
                 <td><input style="font-family: 'Monda', sans-serif;" type="text" name="address" value="<?php echo $result['address'] ?>"> 
                 </td>
   		        </tr>
     		      <tr>
-    		        <td height="35" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;">CITY</td>
+    		        <td height="35" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;">TỈNH / THÀNH PHỐ</td>
                 <td><input style="font-family: 'Monda', sans-serif;" type="text" name="city" value="<?php echo $result['city'] ?>"> 
                 </td>
   		        </tr>
     		      <tr>
-    		        <td height="35" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;">COUNTRY</td>
+    		        <td height="35" style="color:#602D8D; font-family: 'Monda', sans-serif; font-size: 18px;">QUỐC GIA</td>
                 <td><input style="font-family: 'Monda', sans-serif;" type="text" name="country" value="<?php echo $result['country'] ?>"> 
                 </td>
   		        </tr>
   		        <tr>
-  		        	<td height="40"><input type="submit" name="submit" value="Save" style="font-size: 18px; background-color: white;color:#602D8D; border-radius: 10%"></td>
+  		        	<td height="40"><input type="submit" name="submit" value="Lưu" style="font-size: 18px; background-color: white; color:#602D8D; border-radius: 10%"></td>
   		        </tr>
   		        <?php
     		   			}
