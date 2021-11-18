@@ -30,7 +30,7 @@ include_once ($filepath.'/../helpers/format.php');
 		if($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == "" || 
 		   $country == "" || $phone == "" || $password == "")
 		{
-			$alert = "<span style='color:red; font-size:18px;'>Fields must be not empty</span>";
+			$alert = "<span style='color:red; font-size:18px;'>Trường không được để trống</span>";
 			return $alert;
 		}
 		else
@@ -39,7 +39,7 @@ include_once ($filepath.'/../helpers/format.php');
 			$result_check = $this->db->select($check_email);
 			if($result_check)
 			{
-				$alert = "<span style='color:red; font-size:18px;'>Email Already Existed ! Please Enter Another One</span>";
+				$alert = "<span style='color:red; font-size:18px;'>Email đã tồn tại! Điền email khác</span>";
 				return $alert;
 			}
 			else
@@ -48,12 +48,12 @@ include_once ($filepath.'/../helpers/format.php');
 				$result = $this->db->insert($query);
 				if($result)
 				{
-					$alert = "<span style='color:green; font-size:18px;'>Creating an account successfully </span>";
+					$alert = "<span style='color:green; font-size:18px;'>Đăng ký thành công </span>";
 					return $alert;
 				}
 				else
 				{
-					$alert = "<span style='color:red; font-size:18px;'>Creating an account is not success</span>";
+					$alert = "<span style='color:red; font-size:18px;'>Đăng ký không thành thành công</span>";
 					return $alert;
 				}
 			}
@@ -67,7 +67,7 @@ include_once ($filepath.'/../helpers/format.php');
 
 		if($email == "" || $password == "")
 		{
-			$alert = "<span style='color:red; font-size:18px;'>Fields must be not empty</span>";
+			$alert = "<span style='color:red; font-size:18px;'>Trường không được để trống</span>";
 			return $alert;
 		}
 		else
@@ -85,7 +85,7 @@ include_once ($filepath.'/../helpers/format.php');
 
 			else
 			{
-				$alert = "<span style='color:red; font-size:18px;'>Email or Password doesn't match !</span>";
+				$alert = "<span style='color:red; font-size:18px;'>Email và mật khẩu không trùng khớp!</span>";
 				return $alert;
 			}
 		}
@@ -125,7 +125,7 @@ include_once ($filepath.'/../helpers/format.php');
 		if($name == "" || $city == "" || $zipcode == "" || $email == "" || $address == "" || 
 		   $country == "" || $phone == "")
 		{
-			$alert = "<span style='color:red; font-size:18px;'>Fields must be not empty</span>";
+			$alert = "<span style='color:red; font-size:18px;'>Trường không được để trống</span>";
 			return $alert;
 		}
 		else
@@ -135,12 +135,12 @@ include_once ($filepath.'/../helpers/format.php');
 				$result = $this->db->update($query);
 				if($result)
 				{
-					$alert = "<span style='color:green; font-size:18px;'>Customer Updated Successfully </span>";
+					$alert = "<span style='color:green; font-size:18px;'>Cập nhật người dùng thành công</span>";
 					return $alert;
 				}
 				else
 				{
-					$alert = "<span style='color:red; font-size:18px;'>Customer Updated Not Successfully</span>";
+					$alert = "<span style='color:red; font-size:18px;'>Cập nhật người dùng không thành công</span>";
 					return $alert;
 				}
 		}		
@@ -161,7 +161,7 @@ include_once ($filepath.'/../helpers/format.php');
 		$binhluan = $_POST['binhluan'];
 		if($tenbinhluan == '' || $binhluan == '')
 		{
-			$alert = "<span style='color:red; font-size:18px;'>Fields must be not empty</span>";
+			$alert = "<span style='color:red; font-size:18px;'>Trường không được để trống</span>";
 			return $alert;
 		}
 		else
@@ -170,12 +170,12 @@ include_once ($filepath.'/../helpers/format.php');
 				$result = $this->db->insert($query);
 				if($result)
 				{
-					$alert = "<span style='color:green; font-size:18px;'>Comment Successfully </span>";
+					$alert = "<span style='color:green; font-size:18px;'>Bình luận thành công </span>";
 					return $alert;
 				}
 				else
 				{
-					$alert = "<span style='color:red; font-size:18px;'>Comment Not Success</span>";
+					$alert = "<span style='color:red; font-size:18px;'>Bình luận không thành công thành công</span>";
 					return $alert;
 				}
 		}

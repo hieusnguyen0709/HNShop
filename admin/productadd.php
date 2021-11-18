@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Add New Product</h2>
+        <h2>Thêm sản phẩm mới</h2>
         <div class="block">     
         <?php
             if(isset($insertProduct))
@@ -24,19 +24,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
             <table class="form">           
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên</label>
                     </td>
                     <td>
-                        <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
+                        <input type="text" name="productName" placeholder="Nhập tên sản phẩm..." class="medium" />
                     </td>
                 </tr>
 				<tr>
                     <td>
-                        <label>Category</label>
+                        <label>Danh mục</label>
                     </td>
                     <td>
                         <select id="select" name="category">
-                            <option>Select Category</option>
+                            <option>Chọn danh mục</option>
                             <?php
                                 $cat = new category();
                                 $catlist = $cat->select_category();
@@ -56,11 +56,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
                 </tr>
 				<tr>
                     <td>
-                        <label>Brand</label>
+                        <label>Nhà cung cấp</label>
                     </td>
                     <td>
                         <select id="select" name="brand">
-                            <option>Select Brand</option>
+                            <option>Chọn nhà cung cấp</option>
                             <?php
                                 $brand = new brand();
                                 $brandlist = $brand->select_brand();
@@ -81,7 +81,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 				
 				 <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Description</label>
+                        <label>Mô tả</label>
                     </td>
                     <td>
                         <textarea name="product_desc" class="tinymce"></textarea>
@@ -89,26 +89,26 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
                 </tr>
 				<tr>
                     <td>
-                        <label>Price</label>
+                        <label>Đơn giá</label>
                     </td>
                     <td>
-                        <input type="text" name="price" placeholder="Enter Price..." class="medium" />
+                        <input type="text" name="price" placeholder="Nhập giá..." class="medium" />
                     </td>
                 </tr>
             
 
                 <tr>
                     <td>
-                        <label>Quantity</label>
+                        <label>Số lượng</label>
                     </td>
                     <td>
-                        <input type="text" name="quantity" placeholder="Enter Quantity..." class="medium" />
+                        <input type="text" name="quantity" placeholder="Nhập số lượng..." class="medium" />
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Upload hình ảnh</label>
                     </td>
                     <td>
                         <input type="file" name="image" />
@@ -117,11 +117,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 				
 				<tr>
                     <td>
-                        <label>Product Type</label>
+                        <label>Loại sản phẩm</label>
                     </td>
                     <td>
                         <select id="select" name="type">
-                            <option>Select Type</option>
+                            <option>Chọn loại</option>
                             <option value="1">Featured</option>
                             <option value="0">Non-Featured</option>
                         </select>
@@ -131,7 +131,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 				<tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Save" />
+                        <input type="submit" name="submit" Value="Lưu" />
                     </td>
                 </tr>
             </table>

@@ -45,10 +45,10 @@ if(isset($_GET['proid']))
 						<table class="tblone">
 							<tr>
 								<th width="10%">ID</th>
-								<th width="20%">Product Name</th>
-								<th width="20%">Image</th>
-								<th width="25%">Price</th>
-								<th width="25%">Action</th>
+								<th width="20%">Tên sản phẩm</th>
+								<th width="20%">Hình ảnh</th>
+								<th width="25%">Số tiền</th>
+								<th width="25%">Thao tác</th>
 							</tr>
 							<?php
 								$customer_id = Session::get('customer_id');
@@ -66,8 +66,8 @@ if(isset($_GET['proid']))
 								<td><img src="admin/uploads/<?php echo $result['image'] ?>"  alt=""/></td>
 								<td><?php echo $fm->format_currency($result['price']) ?></td>
 								<td>
-									<a href="details.php?proid=<?php echo $result['productId'] ?>">View</a> | 
-									<a onclick="return confirm('Do you want to delete ?')" href="?proid=<?php echo $result['productId']?>">Delete</a></td>
+									<a href="details.php?proid=<?php echo $result['productId'] ?>">Xem</a> | 
+									<a onclick="return confirm('Do you want to delete ?')" href="?proid=<?php echo $result['productId']?>">Xóa</a></td>
 								</td>
 							</tr>
 							<?php

@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Add New Brand</h2>
+                <h2>Thêm nhà cung cấp mới</h2>
                <div class="block copyblock"> 
                 <?php
                    if(isset($insertBrand))
@@ -24,12 +24,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name="brandName" placeholder="Enter Brand Name..." class="medium" />
+                                <input type="text" name="brandName" placeholder="Nhập tên nhà cung cấp..." class="medium" />
                             </td>
                         </tr>
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Save" />
+                                <input type="submit" name="submit" Value="Lưu" />
                             </td>
                         </tr>
                     </table>

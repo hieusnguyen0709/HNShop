@@ -13,7 +13,7 @@ if(isset($_GET['delid']))
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Category List</h2>
+                <h2>Danh sách danh mục</h2>
                 <div class="block">  
                 <?php
                 	if(isset($delcat))
@@ -25,8 +25,8 @@ if(isset($_GET['delid']))
 					<thead>
 						<tr>
 							<th>Serial No.</th>
-							<th>Category Name</th>
-							<th>Action</th>
+							<th>Tên danh mục</th>
+							<th>Thao tác</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -42,8 +42,8 @@ if(isset($_GET['delid']))
 						<tr class="odd gradeX">
 							<td><?php echo $i ?></td>
 							<td><?php echo $result['catName']?></td>
-							<td><a href="catedit.php?catid=<?php echo $result['catId'] ?>">Edit</a> || 
-								<a onclick="return confirm('Do you want to delete ?')" href="?delid=<?php echo $result['catId'] ?>">Delete</a></td>
+							<td><a href="catedit.php?catid=<?php echo $result['catId'] ?>">Sửa</a> || 
+								<a onclick="return confirm('Do you want to delete ?')" href="?delid=<?php echo $result['catId'] ?>">Xóa</a></td>
 						</tr>
 					<?php
 							}

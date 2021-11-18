@@ -70,7 +70,7 @@ if(!isset($_GET['id']))
 										<input type="hidden" name="cartId" value="<?php echo $result['cartId'] ?>"/>
 										<input type="hidden" name="productId" value="<?php echo $result['productId'] ?>"/>
 										<input type="number" name="quantity" min="0" value="<?php echo $result['quantity'] ?>"/>
-										<input type="submit" name="submit" value="Update"/>
+										<input type="submit" name="submit" value="Cập nhật"/>
 									</form>
 								</td>
 								<td>

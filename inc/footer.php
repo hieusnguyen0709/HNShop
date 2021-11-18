@@ -3,40 +3,38 @@
    <div class="footer">
    	  <div class="wrapper">	
 	     <div class="section group">
-				<div class="col_1_of_4 span_1_of_4">
-						<h4>Information</h4>
+				<div class="col_1_of_4 span_1_of_4" style="color: DarkGray;">
+						<h4>Thông tin</h4>
 						<ul>
-							
+							Công Ty Cổ Phần Phát Hành Sách TP HCM - HNSHOP - Số 12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, Thành phố Hồ Chí Minh
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Why buy from us</h4>
+					<h4>Tại sao lại là HNShop</h4>
 						<ul>
-						<li><a href="about.php">About Us</a></li>
-						<li><a href="faq.php">Customer Service</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="contact.php"><span>Site Map</span></a></li>
-						<li><a href="details.php"><span>Search Terms</span></a></li>
+						<li><a href="contact.php">Về chúng tôi</a></li>
+						<li><a href="contact.php">Dịch vụ khách hàng</a></li>
+						<li><a href="#">Chính sách bảo mật</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>My account</h4>
+					<h4>Tài khoản của tôi</h4>
 						<ul>
-							<li><a href="login.php">Sign In</a></li>
-							<li><a href="cart.php">View Cart</a></li>
-							<li><a href="wishlist.php">My Wishlist</a></li>
-							<li><a href="orderdetails.php">Track My Order</a></li>
-							<li><a href="faq.php">Help</a></li>
+							<li><a href="login.php">Đăng nhập</a></li>
+							<li><a href="cart.php">Xem giỏ hàng</a></li>
+							<li><a href="wishlist.php">Wishlist</a></li>
+							<li><a href="orderdetails.php">Theo dõi đơn hàng</a></li>
+							<li><a href="contact.php">Trợ giúp</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Contact</h4>
+					<h4>Liên hệ</h4>
 						<ul>
 							<li><span>+ 0365549764</span></li>
 							<li><span>+ 0971376033</span></li>						
 						</ul>
 						<div class="social-icons">
-							<h4>Follow Us</h4>
+							<h4>Theo dỗi chúng tôi</h4>
 					   		  <ul>
 							      <li class="facebook"><a href="#" target="_blank"> </a></li>
 							      <li class="twitter"><a href="#" target="_blank"> </a></li>
@@ -48,7 +46,7 @@
 				</div>
 			</div>
 			<div class="copy_right">
-				<p>HNShop &amp; All rights Reseverd </p>
+				<p>HNShop</p>
 		   </div>
      </div>
     </div>

@@ -65,8 +65,8 @@ $product = new product();
 			  <div class="header_top_right">
 			    <div class="search_box">
 				    <form action="search.php" method="POST">
-				    	<input type="text" placeholder="Search for Products" name="tukhoa">
-				    	<input type="submit" name="search_product" value="SEARCH">
+				    	<input type="text" placeholder="Tìm kiếm sản phẩm" name="tukhoa">
+				    	<input type="submit" name="search_product" value="TÌM KIẾM">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
@@ -84,7 +84,7 @@ $product = new product();
 										}
 										else
 										{
-											echo 'Empty';
+											echo 'Trống';
 										}
 										?>
 									</span>
@@ -105,11 +105,11 @@ $product = new product();
 		   		$login_check = Session::get('customer_login');
 		   		if($login_check == false)
 		   		{
-		   			echo'<a href="login.php">Login</a></div>';
+		   			echo'<a href="login.php">Đăng nhập</a></div>';
 		   		}
 		   		else
 		   		{
-		   			echo'<a href="?customer_id='.Session::get('customer_id').'">Logout</a></div>';
+		   			echo'<a href="?customer_id='.Session::get('customer_id').'">Đăng xuất</a></div>';
 		   		}
 		   	?>
 		 <div class="clear"></div>
@@ -137,7 +137,7 @@ $product = new product();
 	    $check_order = $ct->check_order($customer_id);
 	  	if($check_order == true)
 	  	{
-	  		echo'<li><a href="orderdetails.php">Ordered</a></li>';
+	  		echo'<li><a href="orderdetails.php">Quản lý đơn hàng</a></li>';
 	  	}
 	  	else
 	  	{
