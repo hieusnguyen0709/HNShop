@@ -131,12 +131,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 		    		echo $login_Customer;
 		    	}
 		    ?>
-        	<h3>Existing Customers</h3>
-        	<p>Sign in with the form below.</p>
+        	<h3>Bạn đã có tài khoản?</h3>
+        	<p>Đăng nhập vào form dưới đây.</p>
         	<form action="" method="POST">
-                	<input type="text" name="email" class="field" placeholder="Enter Email...">
-                    <input type="password" name="password" class="field" placeholder="Enter Password...">
-                    <div class="buttons"><div><button type="submit" class="grey" name="login">Sign In</button></div></div>
+                	<input type="text" name="email" class="field" placeholder="Nhập Email...">
+                    <input type="password" name="password" class="field" placeholder="Nhập mật khẩu...">
+                    <div class="buttons"><div><button type="submit" class="grey" name="login">Đăng nhập</button></div></div>
                     <p></p>
                     <a href="<?php echo $fb_login_url;?>"><img src="images/login_fb.png" style="border-radius: 3px"></a>
                     <p></p>
@@ -145,7 +145,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
         </div>
 
     	<div class="register_account">
-    		<h3>Register New Account</h3>
+    		<h3>Đăng ký tài khoản mới</h3>
     		<?php
 		    	if(isset($insertCustomer))
 		    	{
@@ -158,36 +158,36 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 						<tr>
 						<td>
 							<div>
-								<input type="text" name="email" placeholder="Enter E-Mail...">
+								<input type="text" name="email" placeholder="Nhập e-mail...">
 							</div>
 							<div>
-								<input type="text" name="password" placeholder="Enter Password...">
+								<input type="text" name="password" placeholder="Nhập mật khẩu...">
 							</div>
 							<div>
-								<input type="text" name="name" placeholder="Enter Name..." >
+								<input type="text" name="name" placeholder="Nhập tên..." >
 							</div>	
 				           <div>
-				          		<input type="text" name="phone" placeholder="Enter Phone...">
+				          		<input type="text" name="phone" placeholder="Nhập số điện thoại...">
 				          </div>	
 		    			 </td>
 		    			<td>
 							<div>
-								<input type="text" name="zipcode" placeholder="Enter Zip-Code...">
+								<input type="text" name="zipcode" placeholder="Nhập zip-code...">
 							</div>
 							<div>
-								<input type="text" name="address" placeholder="Enter Address...">
+								<input type="text" name="address" placeholder="Nhập địa chỉ...">
 							</div>
 							<div>
-							   <input type="text" name="city" placeholder="Enter City...">
+							   <input type="text" name="city" placeholder="Nhập thành phố...">
 							</div>
 						<div>
-							<input type="text" name="country" placeholder="Enter Country...">
+							<input type="text" name="country" placeholder="Nhập quốc gia...">
 						</div>        
 		    			</td>
 		    </tr> 
 		    </tbody></table> </br> 
-		   <div class="search"><div><button type="submit" name="submit" class="grey">Create Account</button> </div></div>
-		    <p class="terms">By clicking 'Create Account' you agree to the <a href="#">Terms &amp; Conditions</a>.</p>
+		   <div class="search"><div><button type="submit" name="submit" class="grey">Đăng ký</button> </div></div>
+		    <p class="terms">Bằng việc đăng ký, bạn đã đồng ý với HNShop về  <a href="#">Điều khoản dịch vụ &amp; Chính sách bảo mật</a>.</p>
 		    <div class="clear"></div>
 
 		    </form>
@@ -232,7 +232,7 @@ if(isset($_SESSION['fb_user_id']))
 			}
 		else
 			{
-				$alert = "<span style='color:red; font-size:18px;'>Creating an account is not success</span>";
+				$alert = "<span style='color:red; font-size:18px;'>Đăng ký không thành công</span>";
 				return $alert;
 			}
 	}

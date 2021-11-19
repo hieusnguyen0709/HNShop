@@ -14,7 +14,7 @@ if(isset($_GET['productid']))
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Product List</h2>
+        <h2>Danh sách sản phẩm</h2>
         <div class="block">  
         	<?php
         		if(isset($delpro))
@@ -26,15 +26,15 @@ if(isset($_GET['productid']))
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Product Name</th>
-					<th>Product Price</th>
-					<th>In Stock</th>
-					<th>Product Image</th>
-					<th>Category</th>
-					<th>Brand</th>
-					<th>Description</th>
+					<th>Tên sản phẩm</th>
+					<th>Đơn giá</th>
+					<th>Trong kho</th>
+					<th>Hình ảnh</th>
+					<th>Danh mục</th>
+					<th>Nhà cung cấp</th>
+					<th>Mô tả</th>
 					<th>QR Code</th>
-					<th>Action</th>
+					<th>Thao tác</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -66,8 +66,8 @@ if(isset($_GET['productid']))
 					<td style="padding-top: 30px;">
 						<img src="uploads/<?php echo $result['qrImg'] ?>" width="80px" height="80px">
 					</td>
-					<td><a href="productedit.php?productid=<?php echo $result['productId']?>">Edit</a> || 
-						<a onclick="return confirm('Do you want to delete ?')" href="?productid=<?php echo $result['productId']?>">Delete</a></td>
+					<td><a href="productedit.php?productid=<?php echo $result['productId']?>">Sửa</a> || 
+						<a onclick="return confirm('Do you want to delete ?')" href="?productid=<?php echo $result['productId']?>">Xóa</a></td>
 				</tr>
 					<?php
 						    }

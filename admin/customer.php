@@ -19,7 +19,7 @@ $cs = new customer();
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Customer Information</h2>
+                <h2>Thông tin khách hàng</h2>
                <div class="block copyblock"> 
                 <?php
                     $get_customer = $cs->select_customers($id);
@@ -33,35 +33,35 @@ $cs = new customer();
                  <form action="" method="POST">
                     <table class="form">					
                         <tr>
-                            <td>Name</td>
+                            <td>Tên</td>
                             <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['name'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
-                            <td>Phone</td>
+                            <td>Số điện thoại</td>
                             <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['phone'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
-                            <td>City</td>
+                            <td>Thành phố</td>
                             <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['city'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                          <tr>
-                            <td>Country</td>
+                            <td>Quốc gia</td>
                             <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['country'] ?>" name="catName" class="medium" />
                             </td>
                         </tr>
                         <tr>
-                            <td>Address</td>
+                            <td>Địa chỉ</td>
                             <td> </td>
                             <td>
                                 <input type="text" readonly="readonly" value="<?php echo $result['address'] ?>" name="catName" class="medium" />

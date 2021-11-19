@@ -1,12 +1,5 @@
 <?php
-/* 
-| Developed by: Tauseef Ahmad
-| Last Upate: 13-12-2020 04:46 PM
-| Facebook: www.facebook.com/ahmadlogs
-| Twitter: www.twitter.com/ahmadlogs
-| YouTube: https://www.youtube.com/channel/UCOXYfOHgu-C-UfGyDcu5sYw/
-| Blog: https://ahmadlogs.wordpress.com/
- */ 
+
  
  // Include the autoloader provided in the SDK
 require_once(__DIR__.'/Facebook/autoload.php');

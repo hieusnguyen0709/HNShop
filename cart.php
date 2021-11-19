@@ -70,7 +70,7 @@ if(!isset($_GET['id']))
 										<input type="hidden" name="cartId" value="<?php echo $result['cartId'] ?>"/>
 										<input type="hidden" name="productId" value="<?php echo $result['productId'] ?>"/>
 										<input type="number" name="quantity" min="0" value="<?php echo $result['quantity'] ?>"/>
-										<input type="submit" name="submit" value="Update"/>
+										<input type="submit" name="submit" value="Cập nhật"/>
 									</form>
 								</td>
 								<td>
@@ -79,7 +79,7 @@ if(!isset($_GET['id']))
 										echo $fm->format_currency($total);
 									?>
 								</td>
-								<td><a onclick="return confirm('Có phải bạn muốn xóa sản phẩm này ra khỏi đơn hàng không?')" href="?cartid=<?php echo $result['cartId'] ?>">Delete</a></td>
+								<td><a onclick="return confirm('Có phải bạn muốn xóa sản phẩm này ra khỏi đơn hàng không?')" href="?cartid=<?php echo $result['cartId'] ?>">Xóa</a></td>
 							</tr>
 							<?php
 									$subtotal += $total;
@@ -96,7 +96,7 @@ if(!isset($_GET['id']))
 							?>
 						<table style="float:right;text-align:left;" width="33%">
 							<tr>
-								<td> <p style="color: #fe5800; display: inline; font-size: 20px;">Grand Total : </p>
+								<td> <p style="color: #fe5800; display: inline; font-size: 20px;">Tổng số tiền: </p>
 								
 									<?php
 										echo $fm->format_currency($subtotal);

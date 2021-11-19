@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 <div class="container">
 	<section id="content">
 		<form action="login.php" method="post">
-			<h1>Admin Login</h1>
+			<h1>Đăng nhập Admin</h1>
 			<span style="color:red">
 			<?php 
 				if(isset($login_check))
@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 				<input type="password" placeholder="Password"  name="adminPass"/>
 			</div>
 			<div>
-				<input type="submit" value="Log in" />
+				<input type="submit" value="Đăng nhập" />
 			</div>
 		</form><!-- form -->
 		<div class="button">

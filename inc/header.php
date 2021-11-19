@@ -65,14 +65,14 @@ $product = new product();
 			  <div class="header_top_right">
 			    <div class="search_box">
 				    <form action="search.php" method="POST">
-				    	<input type="text" placeholder="Search for Products" name="tukhoa">
-				    	<input type="submit" name="search_product" value="SEARCH">
+				    	<input type="text" placeholder="Tìm kiếm sản phẩm" name="tukhoa">
+				    	<input type="submit" name="search_product" value="TÌM KIẾM">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
 					<div class="cart">
 						<a href="#" title="View my shopping cart" rel="nofollow">
-								<span class="cart_title">Cart</span>
+								<span class="cart_title">Giỏ hàng</span>
 									<span class="no_product">
 										<?php
 										$check_cart = $ct->check_cart();
@@ -80,11 +80,11 @@ $product = new product();
 										{
 											$sum = Session::get("sum");
 											$qty = Session::get("qty");
-											echo $sum.' đ'.'-'.'Qty:'.$qty;
+											echo /*$sum.' đ'.'-'. */'Slg:'.$qty;
 										}
 										else
 										{
-											echo 'Empty';
+											echo 'Trống';
 										}
 										?>
 									</span>
@@ -105,11 +105,11 @@ $product = new product();
 		   		$login_check = Session::get('customer_login');
 		   		if($login_check == false)
 		   		{
-		   			echo'<a href="login.php">Login</a></div>';
+		   			echo'<a href="login.php">Đăng nhập</a></div>';
 		   		}
 		   		else
 		   		{
-		   			echo'<a href="?customer_id='.Session::get('customer_id').'">Logout</a></div>';
+		   			echo'<a href="?customer_id='.Session::get('customer_id').'">Đăng xuất</a></div>';
 		   		}
 		   	?>
 		 <div class="clear"></div>
@@ -118,14 +118,14 @@ $product = new product();
  </div>
 <div class="menu">
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
-	  <li><a href="index.php">Home</a></li>
-	  <li><a href="products.php">Products</a> </li>
-	  <li><a href="topbrands.php">Top Brands</a></li>
+	  <li><a href="index.php">Trang chủ</a></li>
+	  <li><a href="products.php">Sản phẩm</a> </li>
+	  <li><a href="topbrands.php">Nhà cung cấp</a></li>
 	   <?php
 	    $check_cart = $ct->check_cart();
 	  	if($check_cart == true)
 	  	{
-	  		echo'<li><a href="cart.php">Cart</a></li>';
+	  		echo'<li><a href="cart.php">Giỏ hàng</a></li>';
 	  	}
 	  	else
 	  	{
@@ -137,7 +137,7 @@ $product = new product();
 	    $check_order = $ct->check_order($customer_id);
 	  	if($check_order == true)
 	  	{
-	  		echo'<li><a href="orderdetails.php">Ordered</a></li>';
+	  		echo'<li><a href="orderdetails.php">Quản lý đơn hàng</a></li>';
 	  	}
 	  	else
 	  	{
@@ -152,7 +152,7 @@ $product = new product();
 	  	}
 	  	else
 	  	{
-	  		echo'<li><a href="profile.php">Profile</a> </li>';
+	  		echo'<li><a href="profile.php">Tài khoản</a> </li>';
 	  	}
 	  ?>
 	  <?php
@@ -163,7 +163,7 @@ $product = new product();
 	  	}
 	  ?>
 	  	  
-	  <li><a href="contact.php">Contact</a> </li>
+	  <li><a href="contact.php">Liên hệ</a> </li>
 	  <div class="clear"></div>
 	</ul>
 </div>

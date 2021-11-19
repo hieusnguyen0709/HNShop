@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Add New User</h2>
+                <h2>Thêm người dùng</h2>
                <div class="block copyblock"> 
                 <?php
                 if(isset($insertCustomer))
@@ -22,47 +22,47 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name="email" placeholder="Enter E-Mail...">
+                                <input type="text" name="email" placeholder="Nhập e-mail...">
                             </td>
                         </tr>
                          <tr>
                             <td>
-                                <input type="text" name="password" placeholder="Enter Password...">
+                                <input type="text" name="password" placeholder="Nhập mật khẩu...">
                             </td>
                         </tr>
                          <tr>
                             <td>
-                                <input type="text" name="name" placeholder="Enter Name..." >
+                                <input type="text" name="name" placeholder="Nhập tên..." >
                             </td>
                         </tr>
                          <tr>
                             <td>
-                                <input type="text" name="phone" placeholder="Enter Phone...">
+                                <input type="text" name="phone" placeholder="Nhập số điện thoại...">
                             </td>
                         </tr>
                          <tr>
                             <td>
-                                <input type="text" name="zipcode" placeholder="Enter Zip-Code...">
+                                <input type="text" name="zipcode" placeholder="Nhập zip-code...">
                             </td>
                         </tr>
                          <tr>
                             <td>
-                                <input type="text" name="address" placeholder="Enter Address...">
+                                <input type="text" name="address" placeholder="Nhập địa chỉ...">
                             </td>
                         </tr>
                          <tr>
                             <td>
-                                <input type="text" name="city" placeholder="Enter City...">
+                                <input type="text" name="city" placeholder="Nhập thành phố...">
                             </td>
                         </tr>
                          <tr>
                             <td>
-                                <input type="text" name="country" placeholder="Enter Country...">
+                                <input type="text" name="country" placeholder="Nhập quốc gia...">
                             </td>
                         </tr>
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Save" />
+                                <input type="submit" name="submit" Value="Lưu" />
                             </td>
                         </tr>
                     </table>

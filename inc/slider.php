@@ -15,7 +15,7 @@
 				    <div class="text list_2_of_1">
 						<h2>Self-help</h2>
 						<p><?php echo $result['productName'] ?></p>
-						<div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Add to cart</a></span></div>
+						<div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Thêm vào giỏ</a></span></div>
 				   </div>
 			   </div>	
 			   <?php
@@ -36,7 +36,7 @@
 					<div class="text list_2_of_1">
 						  <h2>Truyện</h2>
 						  <p><?php echo $result['productName'] ?></p>
-						  <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Add to cart</a></span></div>
+						  <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Thêm vào giỏ</a></span></div>
 					</div>
 				</div>
 					<?php
@@ -59,7 +59,7 @@
 				    <div class="text list_2_of_1">
 						<h2>Lãng mạn</h2>
 						<p><?php echo $result['productName'] ?></p>
-						<div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Add to cart</a></span></div>
+						<div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Thêm vào giỏ</a></span></div>
 				   </div>
 			   </div>
 			   	<?php
@@ -80,7 +80,7 @@
 					<div class="text list_2_of_1">
 						  <h2>Tiểu thuyết</h2>
 						  <p><?php echo $result['productName'] ?></p>
-						  <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Add to cart</a></span></div>
+						  <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>">Thêm vào giỏ</a></span></div>
 					</div>
 				</div>
 				<?php

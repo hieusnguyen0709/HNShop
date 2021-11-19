@@ -51,15 +51,15 @@ if(isset($_POST['binhluan_submit']))
 					{
 				?>
 				<div class="price">
-					<p>Price: <span><?php echo $fm->format_currency($result['price']) ?></span></p>
-					<p>In Stock: <span><?php echo $result['quantity'] ?></span></p>
-					<p>Category: <span><?php echo $result['catName'] ?></span></p>
-					<p>Brand:<span><?php echo $result['brandName'] ?></span></p>
+					<p>Giá: <span><?php echo $fm->format_currency($result['price']) ?></span></p>
+					<p>Trong Kho: <span><?php echo $result['quantity'] ?></span></p>
+					<p>Danh mục: <span><?php echo $result['catName'] ?></span></p>
+					<p>Nhà cung cấp: <span><?php echo $result['brandName'] ?></span></p>
 				</div>
 				<div class="">
 					<form action="" method="post">
 						<input type="number" class="buyfield" name="quantity" value="1" min="1" />
-						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
+						<input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
 					</form>
 					</br>		
 					<?php
@@ -74,7 +74,7 @@ if(isset($_POST['binhluan_submit']))
 					else
 					{
 				?>
-					<span class="error" style="font-family: 'Monda', sans-serif; font-size: 25px;">PRODUCT IS NOT AVAILABLE !</span></br>
+					<span class="error" style="font-family: 'Monda', sans-serif; font-size: 25px;">SẢN PHẨM TẠM HẾT HÀNG !</span></br>
 				<?php 
 					}
 				?>
@@ -86,7 +86,7 @@ if(isset($_POST['binhluan_submit']))
 							$login_check = Session::get('customer_login');
 						  	if($login_check)
 						  	{
-						  		echo'<input type="submit" class="buysubmit" name="compare" value="Save to Wishlist"/>';
+						  		echo'<input type="submit" class="buysubmit" name="compare" value="Thêm vào Wishlist"/>';
 						  		echo' ';
 						  	}
 						  	else
@@ -109,7 +109,7 @@ if(isset($_POST['binhluan_submit']))
 				<img src="admin/uploads/<?php echo $result['qrImg'] ?>" width="80px" height="80px">
 	    	</div>
 			<div class="product-desc">
-			<h2>Preview</h2>
+			<h2>Mô tả</h2>
 				<?php echo $result['product_desc'] ?>
 	    	</div>			
 	</div>
@@ -118,7 +118,7 @@ if(isset($_POST['binhluan_submit']))
     			}
 	?>
 				<div class="rightsidebar span_3_of_1">
-					<h2>CATEGORIES</h2>
+					<h2>DANH MỤC</h2>
 					<ul>
 						<?php
 							$getall_category = $cat->select_category();
@@ -141,7 +141,7 @@ if(isset($_POST['binhluan_submit']))
  		<div class="comment">
  			<div class="row">
  				<div class="col-md-8">
- 				<h3 style="color: #602D8D;font-family: 'Monda', sans-serif; font-size: 22px">COMMENT</h3>
+ 				<h3 style="color: #602D8D;font-family: 'Monda', sans-serif; font-size: 22px">BÌNH LUẬN</h3>
  				<?php
  					if(isset($binhluan_insert))
  					{
@@ -150,11 +150,11 @@ if(isset($_POST['binhluan_submit']))
  				?>
  					 <form action="" method="POST">
  					 	<p><input type="hidden" value="<?php echo $id ?>" name="product_id_binhluan"></p>
- 				 		<p><input type="text" class="form-control" name="tennguoibinhluan" placeholder="Name"></p>
+ 				 		<p><input type="text" class="form-control" name="tennguoibinhluan" placeholder="Tên"></p>
  						<p>
- 							<textarea style="resize: none;" rows="5" placeholder="Comment..." class="form-control" name="binhluan"></textarea>
+ 							<textarea style="resize: none;" rows="5" placeholder="Bình luận..." class="form-control" name="binhluan"></textarea>
  						</p>
- 						<p><input type="submit" value="Send" name="binhluan_submit" class="btn btn-success"></p>
+ 						<p><input type="submit" value="Gửi" name="binhluan_submit" class="btn btn-success"></p>
  					</form>
  				</div>
  			</div>

@@ -17,7 +17,7 @@
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Slider List</h2>
+        <h2>Danh sách Slider</h2>
         <div class="block">  
         	<?php
         		if(isset($del_slider))
@@ -29,10 +29,10 @@
 			<thead>
 				<tr>
 					<th>No.</th>
-					<th>Slider Title</th>
-					<th>Slider Image</th>
-					<th>Type</th>
-					<th>Action</th>
+					<th>Tên Slider</th>
+					<th>Hình ảnh Slider</th>
+					<th>Trạng thái</th>
+					<th>Thao tác</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -55,19 +55,19 @@
 							if($result['type'] == 1)
 							{
 						?>
-						<a style="color: red" href="?del_slider=<?php echo $result['sliderId'] ?>&type=0">Off</a> 
+						<a style="color: red" href="?del_slider=<?php echo $result['sliderId'] ?>&type=0">Ẩn</a> 
 						<?php
 							}
 							else if($result['type'] == 0)
 							{
 						?>
-						<a style="color: green" href="?del_slider=<?php echo $result['sliderId'] ?>&type=1">On</a> 
+						<a style="color: green" href="?del_slider=<?php echo $result['sliderId'] ?>&type=1">Hiện</a> 
 						<?php
 							}
 						?>
 					</td>			
 				<td>
-					<a href="?slider_del=<?php echo $result['sliderId'] ?>" onclick="return confirm('Are you sure to Delete!');" >Delete</a> 
+					<a href="?slider_del=<?php echo $result['sliderId'] ?>" onclick="return confirm('Are you sure to Delete!');" >Xóa</a> 
 				</td>
 				</tr>	
 				<?php

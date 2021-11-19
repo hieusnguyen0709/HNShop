@@ -20,18 +20,18 @@ if(isset($_GET['id']) && isset($_GET['status']))
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>User List</h2>
+        <h2>Danh sách người dùng</h2>
         <div class="block">  
             <table class="data display datatable" id="example">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Name</th>
+					<th>Tên</th>
 					<th>Email</th>
-					<th>Password</th>
-					<th>Created Date</th>
-					<th>Status</th>
-					<th>Action</th>
+					<th>Mật khẩu</th>
+					<th>Ngày khởi tạo</th>
+					<th>Trạng thái</th>
+					<th>Thao tác</th>
 					
 				</tr>
 			</thead>
@@ -57,20 +57,20 @@ if(isset($_GET['id']) && isset($_GET['status']))
 							if($result['status'] == 1)
 							{
 						?>
-						<a style="color: green" href="?id=<?php echo $result['id'] ?>&status=0">Active</a> 
+						<a style="color: green" href="?id=<?php echo $result['id'] ?>&status=0">Kích hoạt</a> 
 						<?php
 							}
 							else if($result['status'] == 0)
 							{
 						?>
-						<a style="color: red" href="?id=<?php echo $result['id'] ?>&status=1">Unactive</a> 
+						<a style="color: red" href="?id=<?php echo $result['id'] ?>&status=1">Ngưng kích hoạt</a> 
 						<?php
 							}
 						?>
 					</td>
 					<td> 
 					<a href="edituser.php?customerid=<?php echo $result['id']?>">View</a> || 
-					<a href="?customerid=<?php echo $result['id'] ?>" onclick="return confirm('Are you sure to Delete!');">Delete</a></td>
+					<a href="?customerid=<?php echo $result['id'] ?>" onclick="return confirm('Bạn có chắc muốn Xóa người dùng!');">Xóa</a></td>
 				</tr>	
 				<?php
 						}

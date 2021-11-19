@@ -21,17 +21,17 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2 style="display: inline;">Your Details Ordered</h2>
+			    	<h2 style="display: inline;">Chi tiết đơn hàng</h2>
 						<table class="tblone">
 							<tr>
 								<th width="10%">ID</th>
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="15%">Price</th>
-								<th width="5%">Quantity</th>
-								<th width="20%">Date</th>
-								<th width="10%">Status</th>
-								<th width="10%">Action</th>
+								<th width="20%">Tên sản phẩm</th>
+								<th width="10%">Hình ảnh</th>
+								<th width="10%">Số tiền</th>
+								<th width="10%">Số lượng</th>
+								<th width="20%">Ngày</th>
+								<th width="10%">Trạng thái</th>
+								<th width="10%">Thao tác</th>
 							</tr>
 							<?php
 								$customer_id = Session::get('customer_id');
@@ -56,18 +56,18 @@
 									<?php
 										if($result['status'] == '0')
 										{
-											echo '<p style="color: green;">Pending</p>';
+											echo '<p style="color: green;">Đang xử lý</p>';
 										}
 										else if($result['status'] == '1')
 										{
 									?>
-										<span>Shipped</span>
+										<span>Đã giao</span>
 										
 									<?php
 										}
 										else if($result['status'] == '2')
 										{
-											echo'Received';
+											echo'Đã nhận hàng';
 										}
 									?>
 								</td>
@@ -83,13 +83,13 @@
 									{
 								?>
 								<td><a href="?confirmid=<?php echo $customer_id ?> &price=<?php echo 
-								$result['price'] ?>&time=<?php echo $result['date_order'] ?>">Confirmed</a></td>
+								$result['price'] ?>&time=<?php echo $result['date_order'] ?>">Xác nhận</a></td>
 								<?php
 									}
 									else
 									{
 								?>
-								<td><?php echo 'Received'; ?></td>
+								<td><?php echo 'Đã nhận hàng'; ?></td>
 								<?php
 									}
 								?>

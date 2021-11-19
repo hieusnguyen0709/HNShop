@@ -6,9 +6,9 @@
     <div class="content">
     	<div class="support">
   			<div class="support_desc">
-  				<h3>Live Support</h3>
-  				<p><span>24 hours | 7 days a week | 365 days a year &nbsp;&nbsp; Live Technical Support</span></p>
-  				<p> It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+  				<h3>Hỗ trợ trực tiếp</h3>
+  				<p><span>24 giờ | 7 ngày một tuần | 365 ngày một năm &nbsp;&nbsp; Hỗ trợ kỹ thuật trực tiếp</span></p>
+  				<p> Công Ty Cổ Phần Phát Hành Sách TP HCM - HNSHOP -  Số 12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, Thành phố Hồ Chí Minh, HNShop.com nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống HNShop trên toàn quốc..</p>
   			</div>
   				<img src="web/images/contact.png" alt="" />
   			<div class="clear"></div>
@@ -16,10 +16,10 @@
     	<div class="section group">
 				<div class="col span_2_of_3">
 				  <div class="contact-form">
-				  	<h2>Contact Us</h2>
+				  	<h2>Liên Hệ</h2>
 					    <form>
 					    	<div>
-						    	<span><label>NAME</label></span>
+						    	<span><label>TÊN</label></span>
 						    	<span><input type="text" value=""></span>
 						    </div>
 						    <div>
@@ -27,28 +27,28 @@
 						    	<span><input type="text" value=""></span>
 						    </div>
 						    <div>
-						     	<span><label>MOBILE.NO</label></span>
+						     	<span><label>SỐ ĐIỆN THOẠI</label></span>
 						    	<span><input type="text" value=""></span>
 						    </div>
 						    <div>
-						    	<span><label>SUBJECT</label></span>
+						    	<span><label>VẤN ĐỀ</label></span>
 						    	<span><textarea> </textarea></span>
 						    </div>
 						   <div>
-						   		<span><input type="submit" value="SUBMIT"></span>
+						   		<span><input type="submit" value="GỬI"></span>
 						  </div>
 					    </form>
 				  </div>
   				</div>
 				<div class="col span_1_of_3">
       			<div class="company_address">
-				     	<h2>Company Information :</h2>
-						    	<p>500 Lorem Ipsum Dolor Sit,</p>
-						   		<p>22-56-2-9 Sit Amet, Lorem,</p>
-						   		<p>USA</p>
-				   		<p>Phone:(00) 222 666 444</p>
+				     	<h2>HN Shop</h2>
+						    	<p> Số 12 Nguyễn Văn Bảo,</p>
+						   		<p>Phường 4, Quận Gò Vấp,</p>
+						   		<p>TPHCM</p>
+				   		<p>Phone: 085 9229 185</p>
 				   		<p>Fax: (000) 000 00 00 0</p>
-				 	 	<p>Email: <span>info@mycompany.com</span></p>
+				 	 	<p>Email: <span>huynguyen.kgc@gamil.com</span></p>
 				   		<p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
 				   </div>
 				 </div>

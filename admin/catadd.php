@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Add New Category</h2>
+                <h2>Thêm danh mục mới</h2>
                <div class="block copyblock"> 
                 <?php
                     if(isset($insertCat))
@@ -24,12 +24,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST')
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name="catName" placeholder="Enter Category Name..." class="medium" />
+                                <input type="text" name="catName" placeholder="Nhập tên danh mục..." class="medium" />
                             </td>
                         </tr>
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Save" />
+                                <input type="submit" name="submit" Value="Lưu" />
                             </td>
                         </tr>
                     </table>

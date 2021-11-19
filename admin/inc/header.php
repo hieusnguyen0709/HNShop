@@ -48,7 +48,7 @@ Session::checkSession();
                     <img src="../images/logoHN.png" alt="Logo" />
 				</div>
 				<div class="floatleft middle">
-					<h1>Welcome to ADMIN page</h1>
+					<h1>Trang Quản trị</h1>
 					<p>HNShop</p>
 
 				</div>
@@ -64,7 +64,7 @@ Session::checkSession();
                                     Session::destroy();
                                 }
                             ?>
-                            <li><a href="?action=logout">Logout</a></li>
+                            <li><a href="?action=logout">Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>
@@ -76,11 +76,10 @@ Session::checkSession();
         </div>
         <div class="grid_12">
             <ul class="nav main">
-                <li class="ic-dashboard"><a href="index.php"><span>Dashboard</span></a> </li>
-                <li class="ic-form-style"><a href=""><span>User Profile</span></a></li>
-				<li class="ic-typography"><a href="changepassword.php"><span>Change Password</span></a></li>
-				<li class="ic-grid-tables"><a href="inbox.php"><span>Inbox</span></a></li>
-                <li class="ic-charts"><a href="../index.php"><span>Visit Website</span></a></li>
+                <li class="ic-dashboard"><a href="index.php"><span>Bảng điều khiển</span></a> </li>
+				<li class="ic-form-style"><a href="changepassword.php"><span>Thay đổi mật khẩu</span></a></li>
+				<li class="ic-grid-tables"><a href="inbox.php"><span>Quản lý đơn hàng</span></a></li>
+                <li class="ic-charts"><a href="../index.php"><span>Quay trở lại Website</span></a></li>
             </ul>
         </div>
         <div class="clear">

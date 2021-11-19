@@ -26,7 +26,7 @@ if(isset($_GET['delid']))
 
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Inbox</h2>
+                <h2>Đơn hàng</h2>
                 <div class="block">    
                 <?php
                 	if(isset($shifted))
@@ -44,13 +44,13 @@ if(isset($_GET['delid']))
 					<thead>
 						<tr>
 							<th>No.</th>
-							<th>Order Time</th>
-							<th>Product</th>
-							<th>Quantity</th>
-							<th>Price</th>
-							<th>Customer ID</th>
-							<th>Address</th>
-							<th>Action</th>
+							<th>Ngày đặt</th>
+							<th>Sản phẩm</th>
+							<th>Số lượng</th>
+							<th>Số tiền</th>
+							<th>ID người dùng</th>
+							<th>Điạ chỉ</th>
+							<th>Thao tác</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -73,28 +73,28 @@ if(isset($_GET['delid']))
 							<td><?php echo $fm->format_currency($result['price']) ?></td>
 							<td><?php echo $result['customer_id']; ?></td>
 							<td><a href="customer.php?customerid=<?php echo $result['customer_id'] ?>">
-							View Customer</a>
+							Xem người dùng</a>
 							</td>
 							<td>
 								<?php
 									if($result['status'] == 0)
 									{
 								?>
-								<a style="color: green;" href="?shiftid=<?php echo $result['id'] ?> &price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Pending</a>
+								<a style="color: green;" href="?shiftid=<?php echo $result['id'] ?> &price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Đang xử lý</a>
 								<?php
 									}
 									else if($result['status'] == 1)
 									{
 								?>
 								<?php
-									echo'Shipping...';
+									echo'Đang giao...';
 								?>
 								<?php
 									}
 									else
 									{
 								?>
-								<a style="color:red;" href="?delid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Remove</a>
+								<a style="color:red;" href="?delid=<?php echo $result['id'] ?>&price=<?php echo $result['price'] ?>&time=<?php echo $result['date_order'] ?>">Xóa</a>
 								<?php
 									}
 								?>
