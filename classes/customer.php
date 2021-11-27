@@ -2,6 +2,7 @@
 $filepath = realpath(dirname(__FILE__));
 include_once ($filepath.'/../lib/database.php');
 include_once ($filepath.'/../helpers/format.php');
+ob_start();
 ?>
 <?php
  class customer
@@ -60,6 +61,26 @@ include_once ($filepath.'/../helpers/format.php');
 		}
 	}
 	
+	public function last_send_msg($id_user_last_send_msg, $adminId_to_get_last_send_msg)
+	{
+		$sql = "SELECT * FROM tbl_messages WHERE (incoming_msg_id = '$id_user_last_send_msg'
+                OR outgoing_msg_id = '$id_user_last_send_msg') AND (outgoing_msg_id = '$adminId_to_get_last_send_msg' 
+                OR incoming_msg_id = '$adminId_to_get_last_send_msg') ORDER BY msg_id DESC LIMIT 1";
+        $get_last_send_msg = $this->db->select($sql);
+        if($get_last_send_msg)
+          {
+          	while($row = mysqli_fetch_assoc($get_last_send_msg))
+          	{
+          		$msg = $row['msg']; 
+          		echo $msg;
+          	}
+          }
+         else
+         {
+         	echo'Chưa có tin nhắn nào !';
+         }
+	}
+
 	public function login_customer($data)
 	{
 		$email = mysqli_real_escape_string($this->db->link, $data['email']);
@@ -94,6 +115,13 @@ include_once ($filepath.'/../helpers/format.php');
 	public function select_customers($id)
 	{
 		$query ="SELECT * FROM tbl_customer WHERE id='$id' LIMIT 1";
+		$result = $this->db->select($query);
+		return $result;
+	}
+
+	public function select_customers_to_chat($id_user)
+	{
+		$query ="SELECT * FROM tbl_customer WHERE id='$id_user' LIMIT 1";
 		$result = $this->db->select($query);
 		return $result;
 	}

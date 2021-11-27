@@ -7,7 +7,6 @@
 | YouTube: https://www.youtube.com/channel/UCOXYfOHgu-C-UfGyDcu5sYw/
 | Blog: https://ahmadlogs.wordpress.com/
  */ 
- 
 require_once 'config.php';
 
 $permissions = ['email']; //optional
@@ -114,11 +113,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login']))
 ?>
 
 <?php
-//Insert customer with facebook account
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']))
-{
-    $insertCustomerFacebook = $cs->insert_customer_facebook($_POST);
-}
+
 ?>
 
 
@@ -210,7 +205,6 @@ if(isset($_SESSION['fb_user_id']))
 		Session::set('customer_login',true);
 		Session::set('customer_id',$value['id']);
 		Session::set('customer_name',$fb_user_name);
-		header('location:index.php');
 	}
 
 	else
@@ -227,7 +221,6 @@ if(isset($_SESSION['fb_user_id']))
 					Session::set('customer_login',true);
 					Session::set('customer_id',$value['id']);
 					Session::set('customer_name',$fb_user_name);
-					header('location:index.php');
 				}
 			}
 		else
